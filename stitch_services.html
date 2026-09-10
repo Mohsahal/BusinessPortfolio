@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INFOB - Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-container": "#768599",
+                        "outline": "#747878",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "inverse-primary": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#b9c8de",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#39485a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface": "#f9f9f9",
+                        "primary": "#000000",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-fixed": "#d4e4fa",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#858383",
+                        "on-secondary-container": "#646464",
+                        "inverse-on-surface": "#f1f1f1",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "secondary-fixed": "#e4e2e2",
+                        "secondary": "#5e5e5e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#474646",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#0d1c2d",
+                        "tertiary-container": "#0d1c2d",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "tertiary": "#000000",
+                        "surface-container": "#eeeeee",
+                        "secondary-container": "#e4e2e2",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dadada"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "section-gap": "160px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "hero-mobile": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "hero-lg": ["Inter"],
+                        "subheading": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "h1": ["72px", { lineHeight: "80px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "h2": ["48px", { lineHeight: "56px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "hero-mobile": ["56px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "h1-mobile": ["40px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "hero-lg": ["110px", { lineHeight: "100px", letterSpacing: "-0.04em", fontWeight: "700" }],
+                        "subheading": ["28px", { lineHeight: "36px", letterSpacing: "0em", fontWeight: "500" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" }],
+                        "body-lg": ["20px", { lineHeight: "32px", letterSpacing: "0em", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Underline animation for nav */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: currentColor;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar component -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 font-bold tracking-tighter text-primary dark:text-on-primary" href="#">
+                INFOB
+            </a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center space-x-8 font-body-md text-body-md">
+<a class="text-primary dark:text-on-primary font-semibold border-b-2 border-primary pb-1" href="#">Services</a>
+<a class="relative nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors" href="#">Work</a>
+<a class="relative nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors" href="#">Solutions</a>
+<a class="relative nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors" href="#">About</a>
+<a class="relative nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary font-body-md text-body-md rounded-DEFAULT hover:opacity-80 transition-all duration-300 magnetic-btn" href="#">
+                    Let's Talk →
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+<div class="max-w-4xl pt-16 md:pt-24">
+<div class="inline-flex items-center px-3 py-1 bg-surface-bright rounded-full border border-outline-variant mb-8">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Our Capabilities</span>
+</div>
+<h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-primary mb-8 text-balance">
+                    From idea to execution, we create technology that works for your business.
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                    We deliver scalable, secure, and intuitive digital solutions designed to accelerate growth and operational efficiency for forward-thinking enterprises.
+                </p>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Service 1: Web Development -->
+<div class="group border border-outline-variant rounded-DEFAULT p-8 md:p-12 hover:bg-surface-bright transition-colors duration-300 relative overflow-hidden bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-16">
+<span class="font-body-md text-body-md text-secondary">01</span>
+<span class="material-symbols-outlined text-3xl text-primary font-light" style="font-variation-settings: 'wght' 300;">language</span>
+</div>
+<h3 class="font-subheading text-subheading text-primary mb-4">Web Development</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 pr-4">
+                        High-performance, accessible, and resilient web applications built on modern JavaScript frameworks. We engineer digital experiences that prioritize speed, SEO, and seamless user interaction across all devices.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-secondary border-t border-outline-variant pt-6">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Single Page Applications</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> E-commerce Platforms</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Progressive Web Apps</li>
+</ul>
+</div>
+<!-- Service 2: Mobile Applications -->
+<div class="group border border-outline-variant rounded-DEFAULT p-8 md:p-12 hover:bg-surface-bright transition-colors duration-300 relative overflow-hidden bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-16">
+<span class="font-body-md text-body-md text-secondary">02</span>
+<span class="material-symbols-outlined text-3xl text-primary font-light" style="font-variation-settings: 'wght' 300;">smartphone</span>
+</div>
+<h3 class="font-subheading text-subheading text-primary mb-4">Mobile Applications</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 pr-4">
+                        Native and cross-platform mobile solutions designed for engagement. We build robust iOS and Android applications that deliver native-like performance and intuitive interfaces.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-secondary border-t border-outline-variant pt-6">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> iOS Native (Swift)</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Android Native (Kotlin)</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> React Native &amp; Flutter</li>
+</ul>
+</div>
+<!-- Service 3: AI & Automation -->
+<div class="group border border-outline-variant rounded-DEFAULT p-8 md:p-12 hover:bg-surface-bright transition-colors duration-300 relative overflow-hidden bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-16">
+<span class="font-body-md text-body-md text-secondary">03</span>
+<span class="material-symbols-outlined text-3xl text-primary font-light" style="font-variation-settings: 'wght' 300;">smart_toy</span>
+</div>
+<h3 class="font-subheading text-subheading text-primary mb-4">AI &amp; Automation</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 pr-4">
+                        Intelligent systems that augment human capabilities. We integrate machine learning models and robotic process automation to streamline workflows, analyze vast datasets, and drive predictive insights.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-secondary border-t border-outline-variant pt-6">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Predictive Analytics</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Natural Language Processing</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Workflow Automation</li>
+</ul>
+</div>
+<!-- Service 4: Custom Software -->
+<div class="group border border-outline-variant rounded-DEFAULT p-8 md:p-12 hover:bg-surface-bright transition-colors duration-300 relative overflow-hidden bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-16">
+<span class="font-body-md text-body-md text-secondary">04</span>
+<span class="material-symbols-outlined text-3xl text-primary font-light" style="font-variation-settings: 'wght' 300;">code_blocks</span>
+</div>
+<h3 class="font-subheading text-subheading text-primary mb-4">Custom Software</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 pr-4">
+                        Bespoke enterprise applications tailored to your exact operational requirements. We eschew off-the-shelf limitations to engineer software architectures that evolve with your business model.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-secondary border-t border-outline-variant pt-6">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Enterprise Resource Planning</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> CRM Integration</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Legacy System Modernization</li>
+</ul>
+</div>
+<!-- Service 5: Cloud & DevOps -->
+<div class="group border border-outline-variant rounded-DEFAULT p-8 md:p-12 hover:bg-surface-bright transition-colors duration-300 relative overflow-hidden bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-16">
+<span class="font-body-md text-body-md text-secondary">05</span>
+<span class="material-symbols-outlined text-3xl text-primary font-light" style="font-variation-settings: 'wght' 300;">cloud</span>
+</div>
+<h3 class="font-subheading text-subheading text-primary mb-4">Cloud &amp; DevOps</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 pr-4">
+                        Scalable infrastructure and continuous delivery pipelines. We optimize cloud environments for performance, cost-efficiency, and reliability, ensuring rapid deployment cycles.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-secondary border-t border-outline-variant pt-6">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Cloud Migration (AWS, Azure, GCP)</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> CI/CD Implementation</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Infrastructure as Code</li>
+</ul>
+</div>
+<!-- Service 6: Cybersecurity -->
+<div class="group border border-outline-variant rounded-DEFAULT p-8 md:p-12 hover:bg-surface-bright transition-colors duration-300 relative overflow-hidden bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-16">
+<span class="font-body-md text-body-md text-secondary">06</span>
+<span class="material-symbols-outlined text-3xl text-primary font-light" style="font-variation-settings: 'wght' 300;">security</span>
+</div>
+<h3 class="font-subheading text-subheading text-primary mb-4">Cybersecurity</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 pr-4">
+                        Proactive defense strategies and robust security architectures. We protect your digital assets through comprehensive audits, threat modeling, and implementation of zero-trust frameworks.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-secondary border-t border-outline-variant pt-6">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Penetration Testing</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Compliance Audits (SOC2, GDPR)</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Threat Intelligence</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Process Timeline -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant pt-24">
+<div class="mb-16">
+<div class="inline-flex items-center px-3 py-1 bg-surface-bright rounded-full border border-outline-variant mb-6">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Methodology</span>
+</div>
+<h2 class="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 text-primary">From idea to impact.</h2>
+</div>
+<!-- Horizontal Timeline (Desktop) / Vertical (Mobile) -->
+<div class="relative">
+<!-- Track Line -->
+<div class="absolute top-0 md:top-8 left-4 md:left-0 w-0.5 md:w-full h-full md:h-0.5 bg-outline-variant"></div>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-8 pl-12 md:pl-0">
+<!-- Step 1 -->
+<div class="relative pt-0 md:pt-16">
+<div class="absolute top-0 left-[-48px] md:left-0 w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center z-10 md:top-4 md:-translate-y-1/2">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+</div>
+<h4 class="font-subheading text-body-lg font-medium text-primary mb-2">Discover</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Deep-dive analysis of operational challenges and market opportunities.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative pt-0 md:pt-16">
+<div class="absolute top-0 left-[-48px] md:left-0 w-8 h-8 bg-background border-2 border-outline-variant rounded-full flex items-center justify-center z-10 md:top-4 md:-translate-y-1/2"></div>
+<h4 class="font-subheading text-body-lg font-medium text-primary mb-2">Strategize</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Architecting the technical roadmap and resource allocation.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pt-0 md:pt-16">
+<div class="absolute top-0 left-[-48px] md:left-0 w-8 h-8 bg-background border-2 border-outline-variant rounded-full flex items-center justify-center z-10 md:top-4 md:-translate-y-1/2"></div>
+<h4 class="font-subheading text-body-lg font-medium text-primary mb-2">Design</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Prototyping UX/UI and defining system architecture.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative pt-0 md:pt-16">
+<div class="absolute top-0 left-[-48px] md:left-0 w-8 h-8 bg-background border-2 border-outline-variant rounded-full flex items-center justify-center z-10 md:top-4 md:-translate-y-1/2"></div>
+<h4 class="font-subheading text-body-lg font-medium text-primary mb-2">Build</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Agile development cycles with continuous integration.</p>
+</div>
+<!-- Step 5 -->
+<div class="relative pt-0 md:pt-16">
+<div class="absolute top-0 left-[-48px] md:left-0 w-8 h-8 bg-background border-2 border-outline-variant rounded-full flex items-center justify-center z-10 md:top-4 md:-translate-y-1/2"></div>
+<h4 class="font-subheading text-body-lg font-medium text-primary mb-2">Launch</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Rigorous QA, deployment, and performance monitoring.</p>
+</div>
+<!-- Step 6 -->
+<div class="relative pt-0 md:pt-16">
+<div class="absolute top-0 left-[-48px] md:left-0 w-8 h-8 bg-background border-2 border-outline-variant rounded-full flex items-center justify-center z-10 md:top-4 md:-translate-y-1/2"></div>
+<h4 class="font-subheading text-body-lg font-medium text-primary mb-2">Grow</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Post-launch iteration, scaling, and ongoing optimization.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-section-gap">
+<div class="bg-surface-bright border border-outline-variant rounded-lg p-12 md:p-24 text-center">
+<h2 class="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 text-primary mb-6">Ready to initiate your next project?</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-10">Engage with our technical architects to discuss your specific requirements.</p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-body-md text-body-md rounded-DEFAULT hover:opacity-80 transition-all duration-300 magnetic-btn" href="#">
+                    Start the Conversation
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer component -->
+<footer class="w-full py-section-gap bg-primary dark:bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="col-span-1 md:col-span-4 flex flex-col justify-between">
+<a class="font-h2-mobile text-h1-mobile font-bold text-on-primary dark:text-primary mb-8" href="#">
+                    INFOB
+                </a>
+<p class="font-body-md text-body-md text-secondary-fixed-dim dark:text-secondary mt-auto">
+                    © 2024 INFOB. All rights reserved.
+                </p>
+</div>
+<!-- Links -->
+<div class="col-span-1 md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col space-y-4 font-body-md text-body-md">
+<span class="font-label-caps text-label-caps text-on-primary/50 dark:text-primary/50 mb-2">Navigation</span>
+<a class="text-on-primary dark:text-primary underline hover:translate-x-1 transition-transform duration-300 w-fit" href="#">Services</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit" href="#">Work</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit" href="#">Solutions</a>
+</div>
+<div class="flex flex-col space-y-4 font-body-md text-body-md">
+<span class="font-label-caps text-label-caps text-on-primary/50 dark:text-primary/50 mb-2">Company</span>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit" href="#">About</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit" href="#">Contact</a>
+</div>
+<div class="flex flex-col space-y-4 font-body-md text-body-md col-span-2 md:col-span-2">
+<span class="font-label-caps text-label-caps text-on-primary/50 dark:text-primary/50 mb-2">Social</span>
+<div class="flex flex-col space-y-4">
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit flex items-center gap-2" href="#">
+                            LinkedIn <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'wght' 300;">north_east</span>
+</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit flex items-center gap-2" href="#">
+                            Instagram <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'wght' 300;">north_east</span>
+</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 duration-300 w-fit flex items-center gap-2" href="#">
+                            GitHub <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'wght' 300;">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple magnetic button effect
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    </script>
+</body></html>

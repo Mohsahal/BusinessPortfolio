@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INFOB - About Us</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-container": "#768599",
+                        "outline": "#747878",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "inverse-primary": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#b9c8de",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#39485a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface": "#f9f9f9",
+                        "primary": "#000000",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-fixed": "#d4e4fa",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#858383",
+                        "on-secondary-container": "#646464",
+                        "inverse-on-surface": "#f1f1f1",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "secondary-fixed": "#e4e2e2",
+                        "secondary": "#5e5e5e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#474646",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#0d1c2d",
+                        "tertiary-container": "#0d1c2d",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "tertiary": "#000000",
+                        "surface-container": "#eeeeee",
+                        "secondary-container": "#e4e2e2",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dadada"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "hero-mobile": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "hero-lg": ["Inter"],
+                        "subheading": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "h1": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "h2": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "hero-mobile": ["56px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h1-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "hero-lg": ["110px", { "lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "subheading": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; color: #1a1c1c; }
+        .glass-nav { backdrop-filter: blur(20px); }
+        .interactive-element:hover { transform: translateY(-2px); transition: transform 0.2s ease; }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-h2 text-h2 font-bold tracking-tighter text-primary dark:text-on-primary">INFOB</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Services</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Work</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Solutions</a>
+<a class="text-primary dark:text-on-primary font-semibold border-b-2 border-primary pb-1 hover:opacity-80 transition-all duration-300" href="#">About</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Contact</a>
+</div>
+<a class="font-label-caps text-label-caps bg-primary text-on-primary px-6 py-3 rounded-DEFAULT hover:opacity-80 transition-all duration-300 hidden md:inline-flex items-center gap-2" href="#">Let's Talk →</a>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-section-gap pt-20">
+<h1 class="font-hero-mobile text-hero-mobile md:font-hero-lg md:text-hero-lg text-primary max-w-4xl mb-8">We believe technology should make businesses better.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                INFOB focuses on crafting premium digital products and software solutions. We bridge the gap between complex engineering and elegant design, delivering systems that empower organizations to operate with greater efficiency and clarity.
+            </p>
+</section>
+<!-- Image Break -->
+<section class="mb-section-gap">
+<div class="bg-cover bg-center w-full h-[614px] rounded-xl border border-surface-variant" data-alt="A minimal, architectural shot of a modern office space, emphasizing clean lines, stark white walls, and subtle natural lighting. The scene conveys a sense of rigorous, high-end professional focus, aligning with an editorial, premium technology consulting aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpqjm5nk6HQ5ai8QWNy30KCjJj0aXqF8y3EolkNVo5hY77ia7qF3orloqFZ-MJjjdkt1Trmw0slf0kZzYp0lDWNWiNxowN7N3NbI3JnMHCzgBZuj8H8d5UcB92zuQSbjghuvBIB4Dnb5yPBT3AJ486_B2MmKNpwa0gKBaZQ5xxeOe20yXAT-Ky9qiFVgZMmm63Q8JAkpRfwTjq3yxNvzcs_OMF9S2agdlqyOQpZWmIDv31FrVPAri7')"></div>
+</section>
+<!-- Philosophy Bento -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-bright border border-surface-variant p-10 rounded-xl interactive-element">
+<h3 class="font-subheading text-subheading text-primary mb-4">Mission</h3>
+<p class="text-secondary">To engineer digital clarity from business complexity, providing technology solutions that are as intuitive as they are powerful.</p>
+</div>
+<div class="bg-surface-bright border border-surface-variant p-10 rounded-xl interactive-element">
+<h3 class="font-subheading text-subheading text-primary mb-4">Vision</h3>
+<p class="text-secondary">A future where enterprise software is indistinguishable from high-end consumer experiences, driving adoption and operational excellence.</p>
+</div>
+<div class="bg-primary text-on-primary p-10 rounded-xl md:col-span-2 interactive-element">
+<h3 class="font-subheading text-subheading mb-4">Values &amp; Team Philosophy</h3>
+<p class="text-secondary-fixed-dim max-w-3xl">We operate on principles of Informed Minimalism. Every line of code, every pixel, and every architectural decision must serve a definitive business purpose. Our team thrives on intellectual rigor, prioritizing robust engineering over ephemeral trends.</p>
+</div>
+</div>
+</section>
+<!-- Why INFOB -->
+<section class="mb-section-gap">
+<h2 class="font-h2-mobile text-h2-mobile md:font-h2 md:text-h2 text-primary mb-16 border-b border-surface-variant pb-4">Why INFOB?</h2>
+<div class="space-y-12">
+<div class="flex flex-col md:flex-row gap-8 items-start border-b border-surface-variant pb-12">
+<div class="font-h1-mobile text-h1-mobile md:font-h1 md:text-h1 text-primary md:w-1/2">Business First</div>
+<div class="md:w-1/2 pt-4">
+<p class="font-body-lg text-body-lg text-secondary">Technology is a means to an end. We begin every engagement by understanding your operational metrics and strategic goals, ensuring our digital solutions deliver measurable impact.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start border-b border-surface-variant pb-12">
+<div class="font-h1-mobile text-h1-mobile md:font-h1 md:text-h1 text-primary md:w-1/2">Engineering Excellence</div>
+<div class="md:w-1/2 pt-4">
+<p class="font-body-lg text-body-lg text-secondary">We build for scale, security, and longevity. Our architectures are robust, relying on proven patterns rather than fragile novelties, guaranteeing long-term stability.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start border-b border-surface-variant pb-12">
+<div class="font-h1-mobile text-h1-mobile md:font-h1 md:text-h1 text-primary md:w-1/2">Modern Design</div>
+<div class="md:w-1/2 pt-4">
+<p class="font-body-lg text-body-lg text-secondary">We employ Informed Minimalism. Our interfaces are stripped of the extraneous, focusing user attention precisely where it is needed to accomplish complex tasks intuitively.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start pb-12">
+<div class="font-h1-mobile text-h1-mobile md:font-h1 md:text-h1 text-primary md:w-1/2">AI Ready</div>
+<div class="md:w-1/2 pt-4">
+<p class="font-body-lg text-body-lg text-secondary">We design systems with data at their core, ensuring your infrastructure is primed to leverage machine learning and artificial intelligence capabilities as they evolve.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Industries -->
+<section class="mb-section-gap">
+<h2 class="font-h2-mobile text-h2-mobile md:font-h2 md:text-h2 text-primary mb-12">Industries We Serve</h2>
+<div class="flex flex-col border-t border-surface-variant">
+<div class="py-6 border-b border-surface-variant flex justify-between items-center hover:bg-surface-bright transition-colors px-4 -mx-4 cursor-pointer">
+<span class="font-subheading text-subheading text-primary">Startups</span>
+<span class="material-symbols-outlined text-secondary">arrow_forward</span>
+</div>
+<div class="py-6 border-b border-surface-variant flex justify-between items-center hover:bg-surface-bright transition-colors px-4 -mx-4 cursor-pointer">
+<span class="font-subheading text-subheading text-primary">E-commerce</span>
+<span class="material-symbols-outlined text-secondary">arrow_forward</span>
+</div>
+<div class="py-6 border-b border-surface-variant flex justify-between items-center hover:bg-surface-bright transition-colors px-4 -mx-4 cursor-pointer">
+<span class="font-subheading text-subheading text-primary">Healthcare</span>
+<span class="material-symbols-outlined text-secondary">arrow_forward</span>
+</div>
+<div class="py-6 border-b border-surface-variant flex justify-between items-center hover:bg-surface-bright transition-colors px-4 -mx-4 cursor-pointer">
+<span class="font-subheading text-subheading text-primary">Financial Services</span>
+<span class="material-symbols-outlined text-secondary">arrow_forward</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-primary dark:bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-4 mb-8 md:mb-0">
+<div class="font-h2-mobile text-h1-mobile font-bold text-on-primary dark:text-primary mb-4">INFOB</div>
+<p class="text-secondary-fixed-dim font-label-caps text-label-caps">© 2024 INFOB. All rights reserved.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">Services</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">Work</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">Solutions</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-primary dark:text-primary underline hover:translate-x-1 transition-transform duration-300" href="#">About</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">LinkedIn</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">Instagram</a>
+<a class="text-secondary-fixed-dim dark:text-secondary hover:text-on-primary dark:hover:text-primary transition-colors hover:translate-x-1 transition-transform duration-300" href="#">GitHub</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

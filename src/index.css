@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/50 backdrop-blur-2xl border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,0.04)];
+  }
+  .glass-panel-heavy {
+    @apply bg-white/70 backdrop-blur-3xl border border-white/60 shadow-lg;
+  }
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #111111;
+  --color-primary: #000000;
+  --color-background: #f9f9f9;
+  --color-secondary: #5e5e5e;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-high: #e8e8e8;
+  --color-surface-highest: #e2e2e2;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+  --color-border: #E5E5E5;
+  --color-surface-tint: #5f5e5e;
+  --color-body-text: #333333;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --container-max: 1440px;
+  --gutter: 32px;
+  --margin-desktop: 80px;
+  --margin-mobile: 24px;
+  --section-gap: 160px;
+}
+
+html {
+  background-color: var(--color-background);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(200, 200, 200, 0.25), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(220, 220, 220, 0.3), transparent 25%);
+  background-attachment: fixed;
+  color: #1a1c1c;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dark .glass-nav {
+  background-color: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Magnetic Button Hover State */
+.magnetic-button {
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.magnetic-button:hover {
+  transform: translateY(-2px);
+}
+
+.magnetic-button:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Service Card Hover State */
+.service-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.1);
+  border-color: #000000;
+  background-color: #f7f7f7;
+}
+
+/* Image Hover Zoom Container */
+.image-hover-zoom {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.image-hover-zoom img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease;
+}
+
+.card-container:hover .image-hover-zoom img {
+  transform: scale(1.08) rotate(-1deg);
+  opacity: 0.85;
+}
+
+/* Interactive Bento Element */
+.interactive-element {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.interactive-element:hover {
+  transform: perspective(1000px) translateZ(20px) translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  border-color: #000000;
+}
+
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c7c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #747878;
+}
