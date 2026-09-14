@@ -1,2 +1,2 @@
-import WhyXYZ from "./WhyXYZ";
-export default WhyXYZ;
+import WhyZetex from "./WhyZetex";
+export default WhyZetex;

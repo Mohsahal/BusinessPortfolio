@@ -41,7 +41,7 @@ export default function HeroSection() {
         >
           <span className="w-2 h-2 rounded-full bg-primary" />
           <span className="font-mono text-xs uppercase tracking-widest text-neutral-600 font-semibold">
-            XYZ DIGITAL SOLUTIONS
+            ZETEX DIGITAL SOLUTIONS
           </span>
         </motion.div>
         

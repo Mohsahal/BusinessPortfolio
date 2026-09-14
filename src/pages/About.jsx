@@ -22,7 +22,7 @@ export default function About() {
           We believe technology should make businesses better.
         </h1>
         <p className="font-body-md text-body-md text-secondary max-w-3xl leading-relaxed">
-          XYZ focuses on crafting premium digital products and software solutions. We bridge the gap between complex engineering and elegant design, delivering systems that empower organizations to operate with greater efficiency and clarity.
+          Zetex focuses on crafting premium digital products and software solutions. We bridge the gap between complex engineering and elegant design, delivering systems that empower organizations to operate with greater efficiency and clarity.
         </p>
       </section>
 
@@ -33,7 +33,7 @@ export default function About() {
           style={{
             backgroundImage: `url('/images/about-office.jpg')`
           }}
-          aria-label="Modern minimalist architectural office space reflecting XYZ design rigor"
+          aria-label="Modern minimalist architectural office space reflecting Zetex design rigor"
         ></div>
       </section>
 
@@ -63,10 +63,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why XYZ */}
+      {/* Why Zetex */}
       <section className="mb-section-gap">
         <h2 className="font-h1-mobile text-3xl md:font-h2 md:text-h2 text-primary mb-16 border-b border-surface-variant pb-6 font-bold tracking-tight">
-          Why XYZ?
+          Why Zetex?
         </h2>
 
         <div className="space-y-12">

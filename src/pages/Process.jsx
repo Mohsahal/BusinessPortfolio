@@ -23,7 +23,7 @@ export default function Process() {
           <div className="absolute inset-0 bg-primary/5 mix-blend-multiply z-10 transition-colors duration-500 group-hover:bg-transparent"></div>
           <img 
             src="/images/process-team.jpg" 
-            alt="XYZ Engineering Process & Collaborative Team" 
+            alt="Zetex Engineering Process & Collaborative Team" 
             className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
           />
           {/* Decorative Corner Accents */}
@@ -131,14 +131,14 @@ export default function Process() {
 
             {/* Direct Call Button */}
             <a
-              href="tel:+917306093151"
+              href="tel:+918714196266"
               className="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-center gap-4 px-7 py-4 border border-outline-variant/60 bg-white text-primary font-sans font-semibold text-sm sm:text-base rounded-xl shadow-sm hover:border-black hover:bg-surface-bright hover:shadow-md active:scale-95 transition-all duration-300"
             >
               <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-primary group-hover:bg-black group-hover:text-white transition-all duration-300">
                   <span className="material-symbols-outlined text-base">call</span>
                 </span>
-                <span>+917306093151</span>
+                <span>+91 87141 96266</span>
               </div>
             </a>
           </div>

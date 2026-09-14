@@ -593,6 +593,92 @@ export function AINexusVisual({ isHovered }) {
 }
 
 /**
+ * 3D Isometric Search Engine & Analytics Visual for SEO & SEARCH OPTIMIZATION
+ */
+export function SEOAnalyticsVisual({ isHovered }) {
+  return (
+    <div className="relative w-32 h-32 flex items-center justify-center perspective-[600px]">
+      <div className="absolute inset-0 bg-neutral-900/5 rounded-2xl blur-md -z-10 group-hover:bg-neutral-900/10 transition-colors duration-500" />
+      <motion.svg
+        viewBox="0 0 120 120"
+        className="w-28 h-28 drop-shadow-md"
+        animate={{
+          rotateX: isHovered ? 16 : 10,
+          rotateY: isHovered ? -14 : -8,
+          y: isHovered ? -5 : 0
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <defs>
+          <linearGradient id="seoGridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#f3f4f6" />
+          </linearGradient>
+          <linearGradient id="growthGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" />
+            <stop offset="100%" stopColor="#059669" />
+          </linearGradient>
+        </defs>
+
+        {/* Foundation Grid Platform */}
+        <path d="M60 84 L98 64 L60 44 L22 64 Z" fill="url(#seoGridGrad)" stroke="#d1d5db" strokeWidth="1.5" />
+        <path d="M22 64 L60 84 L60 90 L22 70 Z" fill="#e5e7eb" />
+        <path d="M60 84 L98 64 L98 70 L60 90 Z" fill="#d1d5db" />
+
+        {/* Search Rank Growth Histogram Bars */}
+        <motion.g animate={{ y: isHovered ? -3 : 0 }} transition={{ duration: 0.4 }}>
+          {/* Bar 1 */}
+          <rect x="34" y="52" width="6" height="12" rx="1" fill="#9ca3af" />
+          {/* Bar 2 */}
+          <rect x="44" y="44" width="6" height="20" rx="1" fill="#4b5563" />
+          {/* Bar 3 */}
+          <rect x="54" y="36" width="6" height="28" rx="1" fill="#1f2937" />
+          {/* Bar 4 (Top Rank 1 - Emerald Green) */}
+          <rect x="64" y="26" width="6" height="38" rx="1" fill="url(#growthGrad)" />
+        </motion.g>
+
+        {/* Core Web Vitals 100 Dial Tag */}
+        <motion.g
+          animate={{
+            y: isHovered ? -8 : 0,
+            scale: isHovered ? 1.05 : 1
+          }}
+          transition={{ duration: 0.4 }}
+        >
+          <rect x="68" y="14" width="38" height="18" rx="4" fill="#000000" stroke="#10b981" strokeWidth="1.2" />
+          <circle cx="76" cy="23" r="3" fill="#10b981" />
+          <text x="94" y="26" fill="#ffffff" fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle">100%</text>
+        </motion.g>
+
+        {/* Search Target Reticle / Magnifier */}
+        <motion.circle
+          cx="46"
+          cy="38"
+          r="10"
+          fill="none"
+          stroke={isHovered ? "#000000" : "#6b7280"}
+          strokeWidth="1.5"
+          animate={{ scale: isHovered ? 1.15 : 1 }}
+          transition={{ duration: 0.3 }}
+        />
+        <line x1="53" y1="45" x2="60" y2="52" stroke={isHovered ? "#000000" : "#6b7280"} strokeWidth="2" strokeLinecap="round" />
+
+        {/* Growth Trend Arrow */}
+        <motion.path
+          d="M32 60 L50 42 L62 48 L76 30"
+          fill="none"
+          stroke="#10b981"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <polygon points="76,28 78,34 72,32" fill="#10b981" />
+      </motion.svg>
+    </div>
+  );
+}
+
+/**
  * Dispatcher component to render the matching visual
  */
 export default function ServiceVisual({ type, isHovered }) {
@@ -609,6 +695,8 @@ export default function ServiceVisual({ type, isHovered }) {
       return <CloudClusterVisual isHovered={isHovered} />;
     case "ai-nexus":
       return <AINexusVisual isHovered={isHovered} />;
+    case "seo-visual":
+      return <SEOAnalyticsVisual isHovered={isHovered} />;
     default:
       return <NeuralNetworkVisual isHovered={isHovered} />;
   }

@@ -71,9 +71,11 @@ export default function Navbar() {
         {/* Brand Logo - scrolls to top */}
         <button 
           onClick={(e) => scrollToSection(e, "#hero")} 
-          className="font-h1 text-xl md:text-2xl font-extrabold tracking-tighter text-primary hover:opacity-70 transition-opacity text-left cursor-pointer"
+          className="flex items-center gap-2.5 font-h1 text-xl md:text-2xl font-extrabold tracking-tighter text-primary hover:opacity-70 transition-opacity text-left cursor-pointer"
         >
-          XYZ.
+          
+          
+          <span>ZETEX.</span>
         </button>
 
         {/* Desktop Navigation Links - Smooth Scroll, No Redirect */}

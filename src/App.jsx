@@ -10,6 +10,8 @@ import InitialLoader from "./components/ui/InitialLoader";
 
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +25,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <div className="min-h-screen flex flex-col bg-background text-on-background selection:bg-primary selection:text-on-primary overflow-x-hidden w-full relative">
+      <div className="min-h-screen flex flex-col bg-background text-on-background selection:bg-primary selection:text-on-primary w-full relative">
         <ScrollToTop />
         <Navbar />
         <WhatsAppFloat />
@@ -35,6 +37,10 @@ export default function App() {
             
             {/* Project Case Study Page when clicked */}
             <Route path="/work/:projectId" element={<CaseStudy />} />
+
+            {/* Legal Pages */}
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
 
             {/* Other routes scroll smoothly to home sections */}
             <Route path="/services" element={<Navigate to="/#services" replace />} />

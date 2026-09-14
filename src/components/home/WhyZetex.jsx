@@ -21,7 +21,7 @@ const itemVariants = {
   }
 };
 
-export default function WhyXYZ() {
+export default function WhyZetex() {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -67,7 +67,7 @@ export default function WhyXYZ() {
       <motion.div variants={itemVariants} className="mb-10 md:mb-16">
         <Badge className="mb-4 sm:mb-6">Philosophy</Badge>
         <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h2 md:text-h2 text-primary border-b border-surface-border pb-4 md:pb-6 tracking-tight font-bold">
-          Why XYZ?
+          Why Zetex?
         </h2>
       </motion.div>
 

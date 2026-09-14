@@ -3,7 +3,7 @@ import ContactForm from "../contact/ContactForm";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="w-full max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop py-16 md:py-24 mb-16 md:mb-section-gap scroll-mt-24">
+    <section id="contact" className="w-full max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop pt-16 md:pt-24 pb-16 md:pb-24 mb-0 scroll-mt-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Side: Header & Contact Info (Matching Screenshot) */}
         <div className="lg:col-span-5 flex flex-col justify-start">
@@ -14,7 +14,7 @@ export default function ContactSection() {
               useful.
             </h2>
             <p className="mt-6 text-base sm:text-lg text-[#666666] max-w-[420px] leading-relaxed">
-              We build high-performance software for ambitious teams. Reach out to discuss how XYZ can help automate and grow your operations.
+              We build high-performance software for ambitious teams. Reach out to discuss how Zetex can help automate and grow your operations.
             </p>
           </div>
 
@@ -32,10 +32,10 @@ export default function ContactSection() {
                   CALL US
                 </div>
                 <a
-                  href="tel:+917306093151"
+                  href="tel:+918714196266"
                   className="text-[15px] sm:text-base font-medium text-[#111111] hover:underline"
                 >
-                  +91 73060 93151
+                  +91 87141 96266
                 </a>
               </div>
             </div>
@@ -50,10 +50,10 @@ export default function ContactSection() {
                   EMAIL US
                 </div>
                 <a
-                  href="mailto:hello@xyz.studio"
+                  href="mailto:hello@zetex.studio"
                   className="text-[15px] sm:text-base font-medium text-[#111111] hover:underline"
                 >
-                  hello@xyz.studio
+                  hello@zetex.studio
                 </a>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function ContactSection() {
                   WHATSAPP
                 </div>
                 <a
-                  href="https://wa.me/917306093151"
+                  href="https://wa.me/918714196266"
                   target="_blank"
                   rel="noreferrer"
                   className="text-[15px] sm:text-base font-medium text-[#111111] hover:underline"

@@ -1,218 +1,252 @@
 export const services = [
   {
-    id: "ai-automation",
-    aliases: ["ai-solutions"],
+    id: "ai-solutions",
+    aliases: ["ai-automation"],
     number: "01",
-    title: "AI AUTOMATION",
-    displayTitle: "AI Automation",
+    title: "AI SOLUTIONS",
+    displayTitle: "AI Solutions",
     icon: "smart_toy",
     visualType: "neural-network",
-    shortDescription: "Automate repetitive workflows and transform manual business processes into intelligent systems.",
-    fullDescription: "Automate repetitive workflows and transform manual business processes into intelligent systems. We engineer custom autonomous AI agents, enterprise workflow automations, and intelligent decision systems that run 24/7 with zero downtime.",
+    shortDescription: "We design and deploy custom AI agents and workflow automations equipped with cognitive intelligence, persistent memory, and native tool integrations. By building systems that can execute multi-step operations and retain context, we eliminate manual bottlenecks and scale your operations.",
+    fullDescription: "We design and deploy custom AI agents and workflow automations equipped with cognitive intelligence, persistent memory, and native tool integrations. By building systems that can execute multi-step operations and retain context, we eliminate manual bottlenecks and scale your operations.",
     tags: [
-      "Workflow Automation",
-      "AI Agents",
-      "Intelligent Decision Making",
-      "Business Process Automation"
+      "Autonomous AI Agents",
+      "Intelligent workflow automation",
+      "Tool integrations & actions",
+      "Context retention & memory"
     ],
     features: [
-      "Workflow Automation",
-      "AI Agents",
-      "Intelligent Decision Making",
-      "Business Process Automation"
+      "Autonomous AI Agents",
+      "Intelligent workflow automation",
+      "Tool integrations & actions",
+      "Context retention & memory"
     ],
     capabilities: [
       "Autonomous Multi-Agent Systems & Orchestration",
-      "End-to-end Enterprise Workflow Automation",
-      "Intelligent Decision-Making & Rule Engines",
-      "Robotic & Business Process Automation (RPA/BPA)",
-      "Omnichannel Automation & Conversational Pipelines"
+      "End-to-End Enterprise Workflow Automation",
+      "Native Tool Integrations & Custom Action APIs",
+      "Cognitive Intelligence & Persistent Memory Pipelines",
+      "Multi-Step Complex Operation Execution"
     ],
     deliverables: [
-      "Custom AI Agent Orchestration Pipeline",
-      "Autonomous Workflow Integration & Connectors",
-      "Real-time Analytics & Execution Monitoring Dashboard",
-      "Security Guardrails, Human-in-the-loop Controls & SLAs"
+      "Custom AI Agent Orchestration Architecture",
+      "Tool & System Integration Connectors",
+      "Context Memory & Embedding Pipeline",
+      "Security Guardrails & Execution Dashboard"
     ]
   },
   {
     id: "custom-software",
-    aliases: ["web-development"],
+    aliases: ["software-development"],
     number: "02",
     title: "CUSTOM SOFTWARE",
     displayTitle: "Custom Software",
     icon: "code_blocks",
     visualType: "software-stack",
-    shortDescription: "Scalable web platforms and business applications designed around your unique requirements.",
-    fullDescription: "Scalable web platforms and business applications designed around your unique requirements. We craft bespoke software architectures, multi-tenant SaaS platforms, and robust REST APIs engineered for speed, high concurrency, and long-term maintainability.",
+    shortDescription: "Off-the-shelf tools force you to bend your business to their logic. We build custom business operational software shaped around how your team actually runs, providing full ownership of ERPs, CRMs, and internal platforms with no bloat and no licensing overhead.",
+    fullDescription: "Off-the-shelf tools force you to bend your business to their logic. We build custom business operational software shaped around how your team actually runs, providing full ownership of ERPs, CRMs, and internal platforms with no bloat and no licensing overhead.",
     tags: [
-      "Web Applications",
-      "SaaS Platforms",
-      "REST APIs",
-      "Backend Systems"
+      "Internal platforms & ERPs",
+      "Custom CRM systems",
+      "Workflow automation",
+      "API & systems integration"
     ],
     features: [
-      "Web Applications",
-      "SaaS Platforms",
-      "REST APIs",
-      "Backend Systems"
+      "Internal platforms & ERPs",
+      "Custom CRM systems",
+      "Workflow automation",
+      "API & systems integration"
     ],
     capabilities: [
-      "High-Performance Single Page & Multi-tenant SaaS Apps",
-      "Robust REST & GraphQL API Design and Gateways",
-      "Scalable Microservices & Event-Driven Backends",
-      "Database Modeling, High-throughput Caching & Sharding",
-      "Enterprise RBAC, Multi-factor Security & Audit Logging"
+      "Bespoke Internal Platforms & Operations Portals",
+      "Enterprise Resource Planning (ERP) Systems",
+      "Custom Client Relationship Management (CRM) Suites",
+      "Enterprise Workflow Automation & Rule Engines",
+      "Seamless API & Legacy Systems Integration"
     ],
     deliverables: [
-      "Production-Ready Custom Web Platform & Source Code",
-      "Comprehensive REST API Documentation (OpenAPI/Swagger)",
-      "Automated CI/CD Pipeline & Infrastructure Templates",
-      "Architecture Documentation & Knowledge Handover"
+      "Full Custom Platform Source Code & Ownership",
+      "Zero Licensing Overhead Architecture",
+      "Comprehensive REST / GraphQL API Specifications",
+      "Role-Based Access Control & Audit Telemetry"
+    ]
+  },
+  {
+    id: "web-applications",
+    aliases: ["web-apps"],
+    number: "03",
+    title: "WEB APPLICATIONS",
+    displayTitle: "Web Applications",
+    icon: "web",
+    visualType: "design-canvas",
+    shortDescription: "From marketing sites to complex dashboards, we build fast, accessible web applications that feel premium and scale cleanly. Engineered for performance, designed to convert.",
+    fullDescription: "From marketing sites to complex dashboards, we build fast, accessible web applications that feel premium and scale cleanly. Engineered for performance, designed to convert.",
+    tags: [
+      "Marketing & brand sites",
+      "Dashboards & internal tools",
+      "Headless CMS integration",
+      "Performance & SEO"
+    ],
+    features: [
+      "Marketing & brand sites",
+      "Dashboards & internal tools",
+      "Headless CMS integration",
+      "Performance & SEO"
+    ],
+    capabilities: [
+      "High-Conversion Marketing & Brand Sites",
+      "Complex Analytical Dashboards & Tooling",
+      "Headless CMS Architecture (Sanity, Strapi, Contentful)",
+      "Sub-Second Performance & Green Core Web Vitals",
+      "Accessible (WCAG 2.1 AA) Responsive Engineering"
+    ],
+    deliverables: [
+      "Production-Ready High-Performance Web Application",
+      "Headless CMS Content Management Architecture",
+      "SEO-Engineered Semantic Component Structure",
+      "Global CDN Edge Delivery & Cache Configuration"
     ]
   },
   {
     id: "mobile-development",
-    aliases: [],
-    number: "03",
+    aliases: ["mobile-apps"],
+    number: "04",
     title: "MOBILE DEVELOPMENT",
     displayTitle: "Mobile Development",
     icon: "smartphone",
     visualType: "mobile-platform",
-    shortDescription: "Beautiful, high-performance mobile experiences for modern businesses.",
-    fullDescription: "Beautiful, high-performance mobile experiences for modern businesses. From concept to App Store and Google Play launch, we build native and cross-platform mobile apps with fluid 120fps animations, biometric authentication, and offline-first capabilities.",
+    shortDescription: "Cross-platform and native mobile apps built for real users. We sweat the details, including gestures, transitions, and offline states, so your product feels effortless in the hand.",
+    fullDescription: "Cross-platform and native mobile apps built for real users. We sweat the details, including gestures, transitions, and offline states, so your product feels effortless in the hand.",
     tags: [
-      "iOS",
-      "Android",
-      "Cross-platform",
-      "API Integration"
+      "iOS & Android apps",
+      "Cross-platform (Flutter)",
+      "App store launch",
+      "Push & notifications"
     ],
     features: [
-      "iOS",
-      "Android",
-      "Cross-platform",
-      "API Integration"
+      "iOS & Android apps",
+      "Cross-platform (Flutter)",
+      "App store launch",
+      "Push & notifications"
     ],
     capabilities: [
-      "Cross-Platform Single Codebase (React Native / Flutter)",
-      "Native iOS (Swift) and Android (Kotlin) Optimization",
-      "Biometric Security, Keychain & Encrypted Local Storage",
-      "Real-time Push Notifications & Deep Linking",
-      "Seamless REST / GraphQL Mobile API Integration"
+      "High-Performance iOS & Android Applications",
+      "Cross-Platform Flutter & React Native Engineering",
+      "Fluid 120fps Gesture Systems & Micro-Interactions",
+      "Offline-First Architecture & Data Synchronization",
+      "Targeted Push Notification & Deep Linking Infrastructure"
     ],
     deliverables: [
-      "Production iOS & Android App Store Ready Builds",
-      "Complete Source Code & Mobile UI Component System",
-      "App Store & Google Play Console Submission Support",
-      "Offline Sync Engine & Push Notification Infrastructure"
+      "Complete App Store & Google Play Launch Deliverables",
+      "Mobile UI Design System & Component Library",
+      "Biometric Authentication & Keychain Storage Integration",
+      "Automated Mobile CI/CD & OTA Release Pipelines"
     ]
   },
   {
-    id: "ui-ux-design",
-    aliases: ["design"],
-    number: "04",
-    title: "UI/UX DESIGN",
-    displayTitle: "UI/UX Design",
-    icon: "design_services",
-    visualType: "design-canvas",
-    shortDescription: "Simple, intuitive interfaces designed to make complex technology feel effortless.",
-    fullDescription: "Simple, intuitive interfaces designed to make complex technology feel effortless. We combine user research, product strategy, and scalable design systems to create visually captivating digital products that users love.",
-    tags: [
-      "UX Research",
-      "Product Design",
-      "Design Systems",
-      "Prototyping"
-    ],
-    features: [
-      "UX Research",
-      "Product Design",
-      "Design Systems",
-      "Prototyping"
-    ],
-    capabilities: [
-      "User Journey Mapping, Personas & UX Research",
-      "Interactive High-Fidelity Clickable Prototypes",
-      "Comprehensive Figma Design Systems & Token Systems",
-      "Micro-interactions, Spatial Motion & Design Audits",
-      "Accessibility (WCAG 2.1 AA) Compliance Standards"
-    ],
-    deliverables: [
-      "Complete Figma Design System with Master Components",
-      "Interactive Prototyping for User Validation",
-      "Developer Handoff Specs & CSS Design Tokens",
-      "User Journey Maps & Research Synthesis Report"
-    ]
-  },
-  {
-    id: "cloud-deployment",
-    aliases: ["cloud-devops"],
+    id: "saas-development",
+    aliases: ["saas"],
     number: "05",
-    title: "CLOUD & DEPLOYMENT",
-    displayTitle: "Cloud & Deployment",
+    title: "SAAS DEVELOPMENT",
+    displayTitle: "SaaS Development",
+    icon: "layers",
+    visualType: "ai-nexus",
+    shortDescription: "We take SaaS products from concept to launch by engineering multi-tenant architecture, billing, auth, and admin systems to scale from your first user to your thousandth.",
+    fullDescription: "We take SaaS products from concept to launch by engineering multi-tenant architecture, billing, auth, and admin systems to scale from your first user to your thousandth.",
+    tags: [
+      "Multi-tenant architecture",
+      "Subscriptions & billing",
+      "Auth & roles",
+      "Admin & analytics"
+    ],
+    features: [
+      "Multi-tenant architecture",
+      "Subscriptions & billing",
+      "Auth & roles",
+      "Admin & analytics"
+    ],
+    capabilities: [
+      "Multi-Tenant Database & Schema Partitioning",
+      "Recurring Subscription Billing (Stripe / Paddle)",
+      "Role-Based Access Control (RBAC) & Enterprise SSO",
+      "Super-Admin Portals & Granular User Analytics",
+      "Feature Flagging & Usage-Based Metering"
+    ],
+    deliverables: [
+      "End-to-End Scalable SaaS Foundation Codebase",
+      "Automated Billing, Invoice & Webhook Handlers",
+      "Security Hardened Authentication & Onboarding Flow",
+      "Executive Product & Revenue Analytics Dashboard"
+    ]
+  },
+  {
+    id: "cloud-devops",
+    aliases: ["cloud-deployment"],
+    number: "06",
+    title: "CLOUD & DEVOPS",
+    displayTitle: "Cloud & DevOps",
     icon: "cloud",
     visualType: "cloud-cluster",
-    shortDescription: "Reliable infrastructure and deployment systems designed for performance and scale.",
-    fullDescription: "Reliable infrastructure and deployment systems designed for performance and scale. We architect cloud-native deployments using Docker, automated CI/CD pipelines, and real-time monitoring to guarantee 99.99% uptime and zero-friction release cycles.",
+    shortDescription: "Reliable infrastructure and deployment pipelines so shipping is boring and uptime is high. We set up the plumbing once, properly, so you never think about it again.",
+    fullDescription: "Reliable infrastructure and deployment pipelines so shipping is boring and uptime is high. We set up the plumbing once, properly, so you never think about it again.",
     tags: [
-      "Cloud Deployment",
-      "Docker",
-      "CI/CD",
-      "Monitoring"
+      "CI/CD pipelines",
+      "Cloud architecture",
+      "Monitoring & uptime",
+      "Cost optimisation"
     ],
     features: [
-      "Cloud Deployment",
-      "Docker",
-      "CI/CD",
-      "Monitoring"
+      "CI/CD pipelines",
+      "Cloud architecture",
+      "Monitoring & uptime",
+      "Cost optimisation"
     ],
     capabilities: [
-      "Cloud Infrastructure on AWS, Google Cloud & Azure",
-      "Docker Containerization & Kubernetes Orchestration",
-      "Zero-Downtime Automated CI/CD Deployment Pipelines",
-      "Comprehensive Telemetry, Log Aggregation & Alerting",
-      "Cost Optimization, Auto-scaling & Disaster Recovery"
+      "Automated CI/CD Delivery Pipelines",
+      "Resilient Cloud Architecture (AWS, GCP, Azure)",
+      "24/7 Monitoring, Alerting & High Uptime SLAs",
+      "Cloud Cost Optimization & Resource Right-Sizing",
+      "Containerization & Orchestration with Docker"
     ],
     deliverables: [
-      "Terraform / CloudFormation Infrastructure as Code",
-      "Multi-Environment CI/CD Automation (Staging & Production)",
-      "Production Docker Images & Orchestration Scripts",
-      "Real-time Monitoring Dashboard & Runbook Documentation"
+      "Infrastructure as Code (Terraform / Docker)",
+      "Zero-Downtime Staging & Production Pipelines",
+      "Centralized Telemetry & Log Aggregation Setup",
+      "Automated Backup & Disaster Recovery Protocols"
     ]
   },
   {
-    id: "ai-integration",
-    aliases: ["cybersecurity"],
-    number: "06",
-    title: "AI INTEGRATION",
-    displayTitle: "AI Integration",
-    icon: "hub",
-    visualType: "ai-nexus",
-    shortDescription: "Bring intelligent AI capabilities into your existing products and workflows.",
-    fullDescription: "Bring intelligent AI capabilities into your existing products and workflows. We integrate state-of-the-art Large Language Models, Retrieval-Augmented Generation (RAG) vector pipelines, and intelligent assistant interfaces directly into your enterprise software.",
+    id: "seo-optimization",
+    aliases: ["seo"],
+    number: "07",
+    title: "SEO & SEARCH OPTIMIZATION",
+    displayTitle: "SEO & Search Optimization",
+    icon: "search_insights",
+    visualType: "seo-visual",
+    shortDescription: "Most agencies build pretty websites that stay invisible to search engines. We engineer websites with strict semantic code, high performance, and search schema so your site acts as an organic customer acquisition engine.",
+    fullDescription: "Most agencies build pretty websites that stay invisible to search engines. We engineer websites with strict semantic code, high performance, and search schema so your site acts as an organic customer acquisition engine.",
     tags: [
-      "LLM Integration",
-      "RAG",
-      "AI APIs",
-      "Intelligent Assistants"
+      "Semantic HTML & structure",
+      "Page speed & Core Web Vitals",
+      "Schema markup & structured data"
     ],
     features: [
-      "LLM Integration",
-      "RAG",
-      "AI APIs",
-      "Intelligent Assistants"
+      "Semantic HTML & structure",
+      "Page speed & Core Web Vitals",
+      "Schema markup & structured data"
     ],
     capabilities: [
-      "Custom LLM API Integrations (OpenAI, Anthropic, Gemini)",
-      "Vector Databases & Retrieval-Augmented Generation (RAG)",
-      "Custom Autonomous Assistant Chatbots & Copilots",
-      "Context-Aware Prompt Engineering & Semantic Search",
-      "AI Safety, Rate Limiting & Enterprise Guardrails"
+      "Strict Semantic HTML5 Document Outlining",
+      "Sub-Second Page Speed & Core Web Vitals (LCP, CLS, INP)",
+      "Schema.org JSON-LD Structured Data Markup",
+      "Technical Search Engine Crawlability & Indexing",
+      "Organic Customer Acquisition Architecture"
     ],
     deliverables: [
-      "Secure AI API Middleware & Vector Database Pipeline",
-      "Embedded Intelligent Assistant UI Component",
-      "RAG Document Ingestion & Embedding Pipeline",
-      "Evaluation Suite for LLM Output Accuracy & Latency"
+      "Technical SEO Infrastructure & Audit Report",
+      "Automated JSON-LD Schema Generation Pipeline",
+      "Green 95+ Core Web Vitals Performance Profile",
+      "Dynamic XML Sitemaps & OpenGraph Meta Protocols"
     ]
   }
 ];

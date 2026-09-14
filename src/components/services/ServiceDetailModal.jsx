@@ -52,12 +52,12 @@ export default function ServiceDetailModal({ service, isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 16 }}
             transition={{ type: "spring", damping: 26, stiffness: 320 }}
-            className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-2xl border border-neutral-200/80 z-10 my-auto overflow-hidden"
+            className="relative w-full max-w-2xl bg-white rounded-none p-6 sm:p-8 md:p-10 shadow-2xl border border-neutral-300 z-10 my-auto overflow-hidden"
           >
             {/* Top Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 flex items-center justify-center transition-colors cursor-pointer"
+              className="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 rounded-none bg-neutral-100 hover:bg-black hover:text-white text-neutral-700 flex items-center justify-center transition-colors cursor-pointer border border-neutral-200"
               aria-label="Close modal"
             >
               <span className="material-symbols-outlined text-lg">close</span>
@@ -65,14 +65,14 @@ export default function ServiceDetailModal({ service, isOpen, onClose }) {
 
             {/* Header: Visual + Number + Title */}
             <div className="flex items-center gap-4 mb-6 pr-10">
-              <div className="w-14 h-14 rounded-xl bg-neutral-100/90 border border-neutral-200/70 flex items-center justify-center shrink-0">
+              <div className="w-14 h-14 rounded-none bg-neutral-100/90 border border-neutral-200/70 flex items-center justify-center shrink-0">
                 <ServiceVisual type={service.visualType} isHovered={true} />
               </div>
               <div>
-                <span className="font-mono text-[11px] font-semibold tracking-wider text-secondary bg-neutral-100 px-2.5 py-0.5 rounded-full border border-neutral-200">
+                <span className="font-mono text-[11px] font-semibold tracking-wider text-secondary bg-neutral-100 px-2.5 py-0.5 rounded-none border border-neutral-200">
                   SERVICE {service.number}
                 </span>
-                <h3 className="font-h2 text-2xl sm:text-3xl font-bold tracking-tight text-primary mt-1 leading-tight">
+                <h3 className="font-h2 text-2xl sm:text-3xl font-bold tracking-tight text-primary mt-1 leading-tight uppercase">
                   {service.title}
                 </h3>
               </div>
@@ -92,7 +92,7 @@ export default function ServiceDetailModal({ service, isOpen, onClose }) {
                 {(service.capabilities || service.features).map((item) => (
                   <div 
                     key={item} 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-neutral-50/80 border border-neutral-200/60"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-none bg-neutral-50/80 border border-neutral-200/60"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     <span className="text-xs sm:text-sm font-medium text-neutral-800 leading-snug">
@@ -113,7 +113,7 @@ export default function ServiceDetailModal({ service, isOpen, onClose }) {
                   {service.deliverables.map((item) => (
                     <span 
                       key={item} 
-                      className="inline-flex items-center gap-1.5 font-mono text-[11px] text-neutral-700 bg-neutral-100 px-2.5 py-1 rounded-md"
+                      className="inline-flex items-center gap-1.5 font-mono text-[11px] text-neutral-700 bg-neutral-100 px-2.5 py-1 rounded-none border border-neutral-200/60"
                     >
                       <span className="material-symbols-outlined text-xs text-emerald-600">check</span>
                       {item}
@@ -130,7 +130,7 @@ export default function ServiceDetailModal({ service, isOpen, onClose }) {
               </span>
               <button
                 onClick={handleStartProject}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-7 py-3 rounded-full font-mono text-xs uppercase tracking-wider font-semibold hover:bg-neutral-800 transition-colors shadow-md cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-7 py-3 rounded-none font-mono text-xs uppercase tracking-wider font-semibold hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer"
               >
                 <span>Request This Service</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>

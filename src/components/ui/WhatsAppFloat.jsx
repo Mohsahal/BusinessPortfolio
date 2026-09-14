@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default function WhatsAppFloat() {
-  const phoneNumber = "7306093151";
-  const formattedPhone = "+91 73060 93151";
-  const telHref = "tel:+917306093151";
+  const phoneNumber = "8714196266";
+  const formattedPhone = "+91 87141 96266";
+  const telHref = "tel:+918714196266";
   const waHref = "https://wa.me/917306093151";
 
   return (

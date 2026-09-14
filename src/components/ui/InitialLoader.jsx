@@ -58,11 +58,13 @@ export default function InitialLoader({ onComplete }) {
           initial={{ scale: 0.75, opacity: 0, y: 16 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-black/5"
+          className="w-16 h-16 rounded-2xl bg-black overflow-hidden flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-black/5"
         >
-          <span className="font-h1 font-black text-2xl text-white tracking-tighter">
-            I
-          </span>
+          <img 
+            src="/images/Zetex.png" 
+            alt="Zetex" 
+            className="w-full h-full object-cover" 
+          />
         </motion.div>
 
         {/* Brand Name */}
@@ -73,7 +75,7 @@ export default function InitialLoader({ onComplete }) {
           className="text-center mb-3"
         >
           <h1 className="font-h1 text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] text-primary">
-            XYZ<span className="text-neutral-400">.</span>
+            ZETEX<span className="text-neutral-400">.</span>
           </h1>
           <p className="font-mono text-[10px] sm:text-xs tracking-[0.28em] text-neutral-500 uppercase mt-1.5 font-medium">
             Digital Solutions

@@ -16,7 +16,7 @@ export default function CaseStudy() {
   const nextProject = projects[(projectIndex + 1) % projects.length];
 
   return (
-    <main className="pt-32 pb-section-gap">
+    <main className="pt-32 pb-16 md:pb-20">
       <SEO 
         title={`${project.title} - Case Study`} 
         description={project.shortDescription}

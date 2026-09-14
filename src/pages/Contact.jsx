@@ -7,8 +7,8 @@ export default function Contact() {
   return (
     <main className="flex-grow w-full max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop py-16 md:py-24 pt-28 md:pt-36 mb-16 md:mb-section-gap">
       <SEO 
-        title="Contact Us - XYZ" 
-        description="Ready to build something real? Get in touch with XYZ to discuss your next digital project." 
+        title="Contact Us - Zetex" 
+        description="Ready to build something real? Get in touch with Zetex to discuss your next digital project." 
       />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Side: Header & Contact Info */}
@@ -20,7 +20,7 @@ export default function Contact() {
               useful.
             </h1>
             <p className="mt-6 text-base sm:text-lg text-[#666666] max-w-[420px] leading-relaxed">
-              We build high-performance software for ambitious teams. Reach out to discuss how XYZ can help automate and grow your operations.
+              We build high-performance software for ambitious teams. Reach out to discuss how Zetex can help automate and grow your operations.
             </p>
           </div>
 
@@ -38,10 +38,10 @@ export default function Contact() {
                   CALL US
                 </div>
                 <a
-                  href="tel:+917306093151"
+                  href="tel:+918714196266"
                   className="text-[15px] sm:text-base font-medium text-[#111111] hover:underline"
                 >
-                  +91 73060 93151
+                  +91 87141 96266
                 </a>
               </div>
             </div>
@@ -56,10 +56,10 @@ export default function Contact() {
                   EMAIL US
                 </div>
                 <a
-                  href="mailto:hello@xyz.studio"
+                  href="mailto:hello@zetex.studio"
                   className="text-[15px] sm:text-base font-medium text-[#111111] hover:underline"
                 >
-                  hello@xyz.studio
+                  hello@zetex.studio
                 </a>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                   WHATSAPP
                 </div>
                 <a
-                  href="https://wa.me/917306093151"
+                  href="https://wa.me/918714196266"
                   target="_blank"
                   rel="noreferrer"
                   className="text-[15px] sm:text-base font-medium text-[#111111] hover:underline"

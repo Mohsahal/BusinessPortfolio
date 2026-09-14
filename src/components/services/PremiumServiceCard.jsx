@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import ServiceVisual from "./ServiceVisuals";
 
 export default function PremiumServiceCard({ service, onSelect }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   const handleClick = (e) => {
     if (onSelect) {
       e.preventDefault();
@@ -13,30 +11,34 @@ export default function PremiumServiceCard({ service, onSelect }) {
   };
 
   return (
-    <div
-      className="h-full"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="h-full">
       <button
         type="button"
         onClick={handleClick}
-        className="w-full text-left cursor-pointer group relative flex flex-col justify-between h-full rounded-none p-6 sm:p-7 transition-all duration-300 ease-out
+        className="w-full text-left cursor-pointer group relative flex flex-col justify-between h-full rounded-none p-7 sm:p-8 transition-all duration-300 ease-out
           border border-neutral-200 hover:border-black
           bg-white hover:bg-[#fafafa]
           shadow-xs hover:shadow-xl
           hover:-translate-y-1 overflow-hidden"
       >
-        {/* Top Header Row: Index number + Category + Top Right Arrow */}
-        <div className="relative z-10 w-full flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-neutral-400 group-hover:text-black tracking-widest transition-colors duration-300">
-              // {service.number}
-            </span>
-            <span className="w-1.5 h-1.5 bg-neutral-300 group-hover:bg-black transition-colors duration-300 rounded-full" />
-            <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 group-hover:text-neutral-700 transition-colors">
-              Solution
-            </span>
+        {/* Top Header Row: Icon + Index + Top Right Arrow */}
+        <div className="relative z-10 w-full flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            {/* Clean Minimal Icon */}
+            <div className="w-11 h-11 border border-neutral-200 group-hover:border-black bg-neutral-50 group-hover:bg-black group-hover:text-white flex items-center justify-center text-neutral-900 transition-all duration-300 rounded-none shrink-0 shadow-2xs">
+              <span className="material-symbols-outlined text-xl">
+                {service.icon || "code_blocks"}
+              </span>
+            </div>
+
+            <div className="flex flex-col">
+              <span className="font-mono text-xs font-bold text-neutral-400 group-hover:text-black tracking-widest transition-colors duration-300">
+                // {service.number}
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400">
+                Capability
+              </span>
+            </div>
           </div>
 
           <div className="w-9 h-9 border border-neutral-200 group-hover:border-black group-hover:bg-black group-hover:text-white flex items-center justify-center text-neutral-700 transition-all duration-300 rounded-none shrink-0 shadow-2xs">
@@ -46,46 +48,30 @@ export default function PremiumServiceCard({ service, onSelect }) {
           </div>
         </div>
 
-        {/* Dedicated Interactive Visual Showcase Stage */}
-        <div className="relative z-10 w-full h-36 sm:h-40 flex items-center justify-center my-3 bg-neutral-50/80 border border-neutral-100 group-hover:border-neutral-200/80 group-hover:bg-white transition-all duration-300 overflow-hidden">
-          {/* Subtle grid background */}
-          <div 
-            className="absolute inset-0 opacity-[0.04] group-hover:opacity-[0.08] transition-opacity pointer-events-none"
-            style={{
-              backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
-              backgroundSize: '16px 16px'
-            }}
-          />
-          <div className="transition-transform duration-500 ease-out group-hover:scale-105">
-            <ServiceVisual type={service.visualType} isHovered={isHovered} />
-          </div>
-        </div>
-
-        {/* Middle Content: Title & Description */}
-        <div className="relative z-10 w-full mt-3">
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 uppercase mb-2 leading-tight group-hover:text-black transition-colors">
+        {/* Title & Description */}
+        <div className="relative z-10 w-full mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 uppercase mb-3 leading-tight group-hover:text-black transition-colors">
             {service.title}
           </h3>
 
-          <p className="text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-4 font-sans">
+          <p className="text-sm text-neutral-600 leading-relaxed font-sans line-clamp-4">
             {service.shortDescription}
           </p>
         </div>
 
+        {/* Structured Feature Bullet Checklist */}
+        <div className="relative z-10 w-full mb-6 space-y-2.5">
+          {service.features.map((feature) => (
+            <div key={feature} className="flex items-start gap-2.5 text-xs text-neutral-700">
+              <span className="w-1.5 h-1.5 bg-neutral-300 group-hover:bg-black transition-colors duration-300 rounded-none shrink-0 mt-1.5" />
+              <span className="font-medium leading-snug">{feature}</span>
+            </div>
+          ))}
+        </div>
+
         {/* Bottom Feature Tags & Action Footer */}
         <div className="relative z-10 w-full pt-4 border-t border-neutral-100 group-hover:border-neutral-200 transition-colors duration-300 mt-auto">
-          <div className="flex flex-wrap gap-1.5 mb-3.5">
-            {service.features.slice(0, 3).map((feature) => (
-              <span 
-                key={feature} 
-                className="text-[11px] font-mono text-neutral-600 bg-neutral-100/90 group-hover:bg-white px-2.5 py-1 rounded-none border border-neutral-200/70 transition-colors duration-300"
-              >
-                {feature}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between pt-1 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-400 group-hover:text-black transition-colors duration-300">
+          <div className="flex items-center justify-between text-xs font-mono font-semibold uppercase tracking-wider text-neutral-400 group-hover:text-black transition-colors duration-300">
             <span>Explore Architecture</span>
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-300">
               arrow_forward
