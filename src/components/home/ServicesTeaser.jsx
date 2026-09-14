@@ -67,7 +67,7 @@ export default function ServicesSection() {
         <motion.div variants={itemVariants} className="shrink-0">
           <button
             onClick={scrollToContact}
-            className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-neutral-900 text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-black transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+            className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-neutral-900 text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-black transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer"
           >
             <span>Request a Custom Build</span>
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-300">
