@@ -98,6 +98,8 @@ export default {
         "subheading": ["Plus Jakarta Sans", "sans-serif"],
         "label-caps": ["JetBrains Mono", "monospace"],
         "mono": ["JetBrains Mono", "monospace"],
+        "display": ["'Instrument Serif'", "Georgia", "serif"],
+        "serif": ["'Instrument Serif'", "Georgia", "serif"],
       },
       fontSize: {
         "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }],

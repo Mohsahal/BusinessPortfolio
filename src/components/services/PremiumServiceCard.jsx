@@ -4,22 +4,31 @@ import ServiceVisual from "./ServiceVisuals";
 
 export default function PremiumServiceCard({ service, onSelect }) {
   const handleClick = (e) => {
+    e.preventDefault();
     if (onSelect) {
-      e.preventDefault();
       onSelect(service);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (onSelect) onSelect(service);
     }
   };
 
   return (
     <div className="h-full">
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         onClick={handleClick}
+        onKeyDown={handleKeyDown}
         className="w-full text-left cursor-pointer group relative flex flex-col justify-between h-full rounded-none p-7 sm:p-8 transition-all duration-300 ease-out
           border border-neutral-200 hover:border-black
           bg-white hover:bg-[#fafafa]
           shadow-xs hover:shadow-xl
-          hover:-translate-y-1 overflow-hidden"
+          hover:-translate-y-1 overflow-hidden select-none focus:outline-none focus:ring-1 focus:ring-black"
       >
         {/* Top Header Row: Icon + Index + Top Right Arrow */}
         <div className="relative z-10 w-full flex items-center justify-between mb-6">
@@ -78,7 +87,7 @@ export default function PremiumServiceCard({ service, onSelect }) {
             </span>
           </div>
         </div>
-      </button>
+      </div>
     </div>
   );
 }

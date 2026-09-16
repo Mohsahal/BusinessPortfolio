@@ -1,136 +1,138 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ServiceVisual from "./ServiceVisuals";
 
 export default function ServiceDetailModal({ service, isOpen, onClose }) {
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
 
-  if (!service) return null;
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   const handleStartProject = () => {
     onClose();
     setTimeout(() => {
       const contactEl = document.getElementById("contact");
       if (contactEl) {
-        const offset = 80;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = contactEl.getBoundingClientRect().top;
-        const offsetPosition = elementRect - bodyRect - offset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
+        contactEl.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }, 150);
   };
 
   return (
     <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
-          />
-
+      {isOpen && service && (
+        <div 
+          onClick={onClose}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-black/65 backdrop-blur-sm overflow-y-auto"
+        >
           {/* Clean Luxury Modal Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 16 }}
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 16 }}
-            transition={{ type: "spring", damping: 26, stiffness: 320 }}
-            className="relative w-full max-w-2xl bg-white rounded-none p-6 sm:p-8 md:p-10 shadow-2xl border border-neutral-300 z-10 my-auto overflow-hidden"
+            exit={{ opacity: 0, scale: 0.96, y: 12 }}
+            transition={{ type: "spring", damping: 28, stiffness: 340 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-2xl max-h-[92vh] flex flex-col bg-white p-5 sm:p-7 shadow-2xl border border-neutral-300 z-10 my-auto overflow-hidden"
           >
-            {/* Top Close Button */}
-            <button
-              onClick={onClose}
-              className="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 rounded-none bg-neutral-100 hover:bg-black hover:text-white text-neutral-700 flex items-center justify-center transition-colors cursor-pointer border border-neutral-200"
-              aria-label="Close modal"
-            >
-              <span className="material-symbols-outlined text-lg">close</span>
-            </button>
-
-            {/* Header: Visual + Number + Title */}
-            <div className="flex items-center gap-4 mb-6 pr-10">
-              <div className="w-14 h-14 rounded-none bg-neutral-100/90 border border-neutral-200/70 flex items-center justify-center shrink-0">
-                <ServiceVisual type={service.visualType} isHovered={true} />
+            {/* Header: Icon + Number/Title + Close Button */}
+            <div className="flex items-center justify-between pb-4 border-b border-neutral-200 shrink-0 gap-4">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-11 h-11 rounded-none bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-xl">{service.icon === "search_insights" ? "query_stats" : (service.icon || "layers")}</span>
+                </div>
+                <div className="min-w-0">
+                  <span className="inline-block font-mono text-[9px] font-bold tracking-widest text-neutral-500 bg-neutral-100 px-2 py-0.5 border border-neutral-200 mb-0.5">
+                    SERVICE {service.number}
+                  </span>
+                  <h3 className="font-h2 text-lg sm:text-xl font-bold tracking-tight text-primary leading-tight uppercase truncate">
+                    {service.title}
+                  </h3>
+                </div>
               </div>
+
+              {/* Close Button */}
+              <button
+                onClick={onClose}
+                className="w-8 h-8 shrink-0 bg-neutral-100 hover:bg-neutral-900 hover:text-white text-neutral-700 flex items-center justify-center transition-colors cursor-pointer border border-neutral-200"
+                aria-label="Close modal"
+              >
+                <span className="material-symbols-outlined text-base">close</span>
+              </button>
+            </div>
+
+            {/* Scrollable Content Body */}
+            <div className="flex-1 overflow-y-auto py-4 pr-1 space-y-4">
+              {/* Concise Description */}
+              <p className="font-body-md text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                {service.fullDescription || service.shortDescription}
+              </p>
+
+              {/* Core Capabilities - Perfectly Aligned 2-col Grid */}
               <div>
-                <span className="font-mono text-[11px] font-semibold tracking-wider text-secondary bg-neutral-100 px-2.5 py-0.5 rounded-none border border-neutral-200">
-                  SERVICE {service.number}
-                </span>
-                <h3 className="font-h2 text-2xl sm:text-3xl font-bold tracking-tight text-primary mt-1 leading-tight uppercase">
-                  {service.title}
-                </h3>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 font-semibold mb-2">
+                  Core Capabilities & Architecture
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {(service.capabilities || service.features).map((item, idx, arr) => {
+                    const isLastOdd = arr.length % 2 !== 0 && idx === arr.length - 1;
+                    return (
+                      <div 
+                        key={item} 
+                        className={`flex items-center gap-2 px-2.5 py-2 bg-neutral-50 border border-neutral-200/70 ${
+                          isLastOdd ? "sm:col-span-2" : ""
+                        }`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 shrink-0" />
+                        <span className="text-xs font-medium text-neutral-800 leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
 
-            {/* Concise Description */}
-            <p className="font-body-md text-sm sm:text-base text-secondary leading-relaxed mb-6">
-              {service.fullDescription || service.shortDescription}
-            </p>
-
-            {/* Capabilities - Clean Minimalist Grid */}
-            <div className="mb-6">
-              <div className="font-mono text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-3">
-                Core Capabilities & Architecture
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
-                {(service.capabilities || service.features).map((item) => (
-                  <div 
-                    key={item} 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-none bg-neutral-50/80 border border-neutral-200/60"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span className="text-xs sm:text-sm font-medium text-neutral-800 leading-snug">
-                      {item}
-                    </span>
+              {/* Deliverables - Balanced 2-col Grid */}
+              {service.deliverables && (
+                <div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 font-semibold mb-2">
+                    Deliverables
                   </div>
-                ))}
-              </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {service.deliverables.map((item) => (
+                      <div 
+                        key={item} 
+                        className="flex items-center gap-2 font-mono text-[10.5px] text-neutral-700 bg-neutral-50 px-2.5 py-1.5 border border-neutral-200/70"
+                      >
+                        <span className="material-symbols-outlined text-xs text-emerald-600 shrink-0">check</span>
+                        <span className="truncate">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Deliverables Tags */}
-            {service.deliverables && (
-              <div className="mb-8">
-                <div className="font-mono text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-2.5">
-                  Deliverables
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {service.deliverables.map((item) => (
-                    <span 
-                      key={item} 
-                      className="inline-flex items-center gap-1.5 font-mono text-[11px] text-neutral-700 bg-neutral-100 px-2.5 py-1 rounded-none border border-neutral-200/60"
-                    >
-                      <span className="material-symbols-outlined text-xs text-emerald-600">check</span>
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Action Footer */}
-            <div className="pt-4 border-t border-neutral-200/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+            {/* Action Footer - Fixed at bottom */}
+            <div className="pt-3.5 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
               <span className="text-[11px] font-mono text-neutral-400 hidden sm:inline-block">
                 Free technical architecture consultation
               </span>
               <button
                 onClick={handleStartProject}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-7 py-3 rounded-none font-mono text-xs uppercase tracking-wider font-semibold hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neutral-900 text-white px-6 py-2.5 font-mono text-xs uppercase tracking-wider font-semibold hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer"
               >
                 <span>Request This Service</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
