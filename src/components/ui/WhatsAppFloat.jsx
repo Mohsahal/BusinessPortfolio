@@ -11,18 +11,18 @@ export default function WhatsAppFloat() {
       {/* Call Button */}
       <div className="relative flex items-center group pointer-events-auto">
         {/* Tooltip on Desktop */}
-        <span className="hidden md:inline-flex items-center gap-1.5 absolute right-[calc(100%+12px)] px-3 py-1.5 bg-neutral-900/95 backdrop-blur text-white text-xs font-medium rounded-full shadow-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap border border-white/10">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span className="hidden md:inline-flex items-center gap-1.5 absolute right-[calc(100%+12px)] px-3 py-1.5 bg-[#14090C]/95 backdrop-blur text-[#F3ECE2] text-xs font-medium rounded-full shadow-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap border border-[#38161E]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#B3394B] animate-pulse"></span>
           Call {formattedPhone}
         </span>
 
         {/* Pulsing ring on idle (Desktop Only) */}
-        <div className="hidden md:block absolute inset-0 bg-neutral-900 rounded-full animate-ping opacity-20 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+        <div className="hidden md:block absolute inset-0 bg-[#8B2635] rounded-full animate-ping opacity-25 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
 
         {/* Main Call Button */}
         <a
           href={telHref}
-          className="relative bg-neutral-900 hover:bg-black text-white p-3 md:p-3.5 rounded-full shadow-xl hover:scale-110 hover:shadow-2xl active:scale-95 transition-all duration-300 flex items-center justify-center border border-white/15 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="relative bg-[#1A0B10] hover:bg-[#8B2635] text-[#F3ECE2] p-3 md:p-3.5 rounded-full shadow-xl hover:scale-110 hover:shadow-2xl active:scale-95 transition-all duration-300 flex items-center justify-center border border-[#38161E] focus:outline-none focus:ring-2 focus:ring-[#8B2635] focus:ring-offset-2"
           aria-label={`Call ${formattedPhone}`}
           title={`Call ${formattedPhone}`}
         >
@@ -43,7 +43,7 @@ export default function WhatsAppFloat() {
       {/* WhatsApp Button */}
       <div className="relative flex items-center group pointer-events-auto">
         {/* Tooltip on Desktop */}
-        <span className="hidden md:inline-flex items-center gap-1.5 absolute right-[calc(100%+12px)] px-3 py-1.5 bg-neutral-900/95 backdrop-blur text-white text-xs font-medium rounded-full shadow-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap border border-white/10">
+        <span className="hidden md:inline-flex items-center gap-1.5 absolute right-[calc(100%+12px)] px-3 py-1.5 bg-[#14090C]/95 backdrop-blur text-[#F3ECE2] text-xs font-medium rounded-full shadow-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap border border-[#38161E]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
           Chat on WhatsApp
         </span>

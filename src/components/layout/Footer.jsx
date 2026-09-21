@@ -38,31 +38,42 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-on-primary w-full py-10 md:py-12 border-t border-neutral-900">
+    <footer className="bg-[#090305] text-[#F3ECE2] w-full py-10 md:py-12 border-t border-[#261016]">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 md:gap-8 px-4 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto">
         {/* Brand Column */}
         <div className="md:col-span-4 mb-6 md:mb-0 flex flex-col justify-between">
           <div>
             <button
               onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center gap-2 font-h1 text-2xl font-bold text-on-primary mb-2.5 inline-flex tracking-tighter text-left cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center gap-3 font-h1 text-2xl font-bold text-[#F3ECE2] mb-3 inline-flex tracking-tighter text-left cursor-pointer hover:opacity-80 transition-opacity"
             >
-              <span>ZETEX</span>
+              <div className="w-10 h-10 rounded-lg overflow-hidden bg-black border border-[#2A1016] shrink-0 p-0.5 flex items-center justify-center">
+                <img 
+                  src="/images/zetex.jpeg" 
+                  alt="Zetex Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-sans font-extrabold text-xl tracking-[0.16em] text-[#EDE6DD] leading-none">
+                  ZETEX
+                </span>
+              </div>
             </button>
-            <p className="font-body-md text-sm text-neutral-400 max-w-xs mb-5 leading-relaxed">
+            <p className="font-body-md text-sm text-[#9E9387] max-w-xs mb-5 leading-relaxed">
               Software, AI and digital solutions designed to turn ambitious ideas into powerful products.
             </p>
           </div>
           <div className="space-y-1">
-            <p className="font-body-md text-xs text-neutral-400">
+            <p className="font-body-md text-xs text-[#736960]">
               © {new Date().getFullYear()} Zetex Digital Solutions. All rights reserved.
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-400 font-body-md">
-              <Link to="/terms" className="hover:text-on-primary transition-colors hover:underline">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-[#736960] font-body-md">
+              <Link to="/terms" className="hover:text-[#F3ECE2] transition-colors hover:underline">
                 Terms of Service
               </Link>
               <span>•</span>
-              <Link to="/privacy" className="hover:text-on-primary transition-colors hover:underline">
+              <Link to="/privacy" className="hover:text-[#F3ECE2] transition-colors hover:underline">
                 Privacy Policy
               </Link>
             </div>
@@ -73,12 +84,12 @@ export default function Footer() {
         <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8">
           {/* Navigation */}
           <div className="flex flex-col space-y-2 font-body-md text-sm">
-            <span className="font-mono text-xs text-neutral-400 mb-1 uppercase tracking-wider font-semibold">Navigation</span>
+            <span className="font-mono text-xs text-[#8B2635] mb-1 uppercase tracking-wider font-semibold">Navigation</span>
             {footerLinks.navigation.map((item) => (
               <button
                 key={item.name}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-left text-neutral-300 hover:text-on-primary transition-all duration-300 hover:translate-x-1 cursor-pointer text-sm"
+                className="text-left text-[#9E9387] hover:text-[#F3ECE2] transition-all duration-300 hover:translate-x-1 cursor-pointer text-sm"
               >
                 {item.name}
               </button>
@@ -87,12 +98,12 @@ export default function Footer() {
 
           {/* Company */}
           <div className="flex flex-col space-y-2 font-body-md text-sm">
-            <span className="font-mono text-xs text-neutral-400 mb-1 uppercase tracking-wider font-semibold">Company</span>
+            <span className="font-mono text-xs text-[#8B2635] mb-1 uppercase tracking-wider font-semibold">Company</span>
             {footerLinks.company.map((item) => (
               <button
                 key={item.name}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-left text-neutral-300 hover:text-on-primary transition-all duration-300 hover:translate-x-1 cursor-pointer text-sm"
+                className="text-left text-[#9E9387] hover:text-[#F3ECE2] transition-all duration-300 hover:translate-x-1 cursor-pointer text-sm"
               >
                 {item.name}
               </button>
@@ -101,22 +112,22 @@ export default function Footer() {
 
           {/* Connect / Contact */}
           <div className="flex flex-col space-y-2 font-body-md text-sm">
-            <span className="font-mono text-xs text-neutral-400 mb-1 uppercase tracking-wider font-semibold">Direct</span>
+            <span className="font-mono text-xs text-[#8B2635] mb-1 uppercase tracking-wider font-semibold">Direct</span>
             <button
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="text-left text-neutral-300 hover:text-on-primary transition-all duration-300 hover:translate-x-1 cursor-pointer text-sm"
+              className="text-left text-[#9E9387] hover:text-[#F3ECE2] transition-all duration-300 hover:translate-x-1 cursor-pointer text-sm"
             >
               Contact Us
             </button>
             <a
               href="tel:+918714196266"
-              className="text-neutral-300 hover:text-on-primary transition-all duration-300 hover:translate-x-1 text-sm inline-flex items-center gap-1.5"
+              className="text-[#9E9387] hover:text-[#F3ECE2] transition-all duration-300 hover:translate-x-1 text-sm inline-flex items-center gap-1.5"
             >
               +91 87141 96266
             </a>
             <a
               href="mailto:hello@zetex.studio"
-              className="text-neutral-300 hover:text-on-primary transition-all duration-300 hover:translate-x-1 text-sm break-all"
+              className="text-[#9E9387] hover:text-[#F3ECE2] transition-all duration-300 hover:translate-x-1 text-sm break-all"
             >
               hello@zetex.studio
             </a>
@@ -124,7 +135,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="flex flex-col space-y-2 font-body-md text-sm">
-            <span className="font-mono text-xs text-neutral-400 mb-1 uppercase tracking-wider font-semibold">Social</span>
+            <span className="font-mono text-xs text-[#8B2635] mb-1 uppercase tracking-wider font-semibold">Social</span>
             {footerLinks.social.map((item) => {
               const isLinkedIn = item.name.toLowerCase().includes("linkedin");
               const isInstagram = item.name.toLowerCase().includes("instagram");
@@ -134,7 +145,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-neutral-300 hover:text-on-primary transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-2 text-sm"
+                  className="text-[#9E9387] hover:text-[#F3ECE2] transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-2 text-sm"
                 >
                   {isLinkedIn && <Linkedin className="w-4 h-4 shrink-0" />}
                   {isInstagram && <Instagram className="w-4 h-4 shrink-0" />}

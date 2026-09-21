@@ -16,9 +16,9 @@ export default function Button({
   const baseStyles = "inline-flex items-center justify-center font-body-md text-body-md rounded-DEFAULT transition-colors duration-300 text-center";
   
   const variants = {
-    primary: "bg-primary text-on-primary px-8 py-4 hover:bg-surface-tint",
-    secondary: "bg-surface-bright text-primary border border-outline-variant px-8 py-4 hover:bg-surface-container-low",
-    outline: "border border-outline text-primary px-8 py-4 hover:bg-surface-container-low"
+    primary: "bg-[#8B2635] text-[#F3ECE2] px-8 py-4 hover:bg-[#A32D3F] shadow-lg shadow-[#8B2635]/20 font-semibold",
+    secondary: "bg-[#1A0B10] text-[#F3ECE2] border border-[#2E1219] px-8 py-4 hover:bg-[#250F16]",
+    outline: "border border-[#38161E] text-[#E8E1D4] px-8 py-4 hover:bg-[#1A0B10] hover:text-[#F3ECE2] hover:border-[#8B2635]/50 font-semibold"
   };
 
   const content = (

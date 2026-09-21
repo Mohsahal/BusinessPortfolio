@@ -2,7 +2,7 @@ import React from "react";
 
 export function Badge({ children, className = "" }) {
   return (
-    <span className={`inline-flex items-center px-3 py-1 bg-surface-bright rounded-full border border-outline-variant/30 font-label-caps text-label-caps text-secondary uppercase tracking-widest ${className}`}>
+    <span className={`inline-flex items-center px-3.5 py-1 bg-[#1A0B10] rounded-full border border-[#38161E] font-mono text-[10px] text-[#E8E1D4] uppercase tracking-widest font-semibold shadow-xs ${className}`}>
       {children}
     </span>
   );

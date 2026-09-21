@@ -72,25 +72,25 @@ export default function ContactForm() {
     setStatus("idle");
   };
 
-  const inputStyles = "w-full bg-[#f4f4f4] text-[#111111] rounded-none px-4 py-3.5 text-sm focus:outline-none focus:bg-[#eeeeee] transition-colors placeholder:text-[#9ca3af] border-0";
-  const labelStyles = "text-[11px] font-mono font-medium tracking-wider text-[#737373] uppercase block mb-2";
+  const inputStyles = "w-full bg-[#160A0E] text-[#F3ECE2] rounded-none px-4 py-3.5 text-sm border border-[#2A1016] focus:border-[#8B2635] focus:outline-none focus:bg-[#1A0B10] transition-colors placeholder:text-[#6B5E55]";
+  const labelStyles = "text-[11px] font-mono font-medium tracking-wider text-[#A89D91] uppercase block mb-2";
 
   return (
     <div className="relative w-full">
       {status === "success" ? (
-        <div className="text-center py-16 px-6 bg-[#f4f4f4] space-y-6">
-          <div className="w-16 h-16 bg-white border border-neutral-300 rounded-full flex items-center justify-center mx-auto text-[#111111]">
+        <div className="text-center py-16 px-6 bg-[#14090C] border border-[#261016] space-y-6">
+          <div className="w-16 h-16 bg-[#1E0D12] border border-[#38161E] rounded-full flex items-center justify-center mx-auto text-[#B3394B]">
             <span className="material-symbols-outlined text-3xl">check</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#111111] tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#F3ECE2] tracking-tight">
             Inquiry Received
           </h3>
-          <p className="text-sm sm:text-base text-[#666666] max-w-md mx-auto leading-relaxed">
-            Thank you, <span className="font-semibold text-[#111111]">{formData.name}</span>. Our technical architects will review your project requirements and respond within 24 hours.
+          <p className="text-sm sm:text-base text-[#9E9387] max-w-md mx-auto leading-relaxed">
+            Thank you, <span className="font-semibold text-[#F3ECE2]">{formData.name}</span>. Our technical architects will review your project requirements and respond within 24 hours.
           </p>
           <button
             onClick={resetForm}
-            className="bg-[#18181b] text-white px-6 py-3 text-sm font-medium rounded-none hover:bg-black transition-colors inline-block"
+            className="bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-6 py-3 text-sm font-medium rounded-none border border-[#B3394B]/40 transition-colors inline-block cursor-pointer"
           >
             Submit Another Project
           </button>
@@ -160,12 +160,12 @@ export default function ContactForm() {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`${inputStyles} flex items-center justify-between cursor-pointer w-full text-left`}
               >
-                <span className={formData.service ? "text-[#111111]" : "text-[#9ca3af]"}>
+                <span className={formData.service ? "text-[#F3ECE2]" : "text-[#6B5E55]"}>
                   {formData.service 
                     ? servicesList.find(s => s.value === formData.service)?.label 
                     : "Select a service..."}
                 </span>
-                <span className={`material-symbols-outlined text-[#888888] text-xl transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}>
+                <span className={`material-symbols-outlined text-[#B3394B] text-xl transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
               </button>
@@ -176,7 +176,7 @@ export default function ContactForm() {
                     className="fixed inset-0 z-40" 
                     onClick={() => setIsDropdownOpen(false)}
                   ></div>
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#e5e5e5] shadow-lg z-50">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#160A0E] border border-[#2A1016] shadow-2xl z-50">
                     <ul className="py-1">
                       {servicesList.map((svc) => (
                         <li key={svc.value}>
@@ -186,7 +186,7 @@ export default function ContactForm() {
                               handleChange({ target: { name: 'service', value: svc.value }});
                               setIsDropdownOpen(false);
                             }}
-                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#f4f4f4] transition-colors text-[#111111] ${formData.service === svc.value ? 'bg-[#f4f4f4] font-medium' : ''}`}
+                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#200D13] transition-colors text-[#F3ECE2] ${formData.service === svc.value ? 'bg-[#200D13] font-semibold text-[#B3394B]' : ''}`}
                           >
                             {svc.label}
                           </button>
@@ -217,7 +217,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="bg-[#1a1a1a] hover:bg-black text-white px-7 py-3.5 text-sm font-medium inline-flex items-center justify-center gap-2.5 rounded-none transition-colors cursor-pointer w-full sm:w-auto"
+              className="bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-7 py-3.5 text-sm font-semibold inline-flex items-center justify-center gap-2.5 rounded-none border border-[#B3394B]/40 shadow-lg shadow-[#8B2635]/20 transition-all cursor-pointer w-full sm:w-auto"
             >
               <span>{status === "submitting" ? "Sending..." : "Send Message"}</span>
               <span className="material-symbols-outlined text-[17px] -rotate-45 -mt-0.5">send</span>

@@ -50,16 +50,16 @@ export default function ServicesSection() {
       className="px-4 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto mb-20 md:mb-section-gap relative scroll-mt-24"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[70%] bg-neutral-200/30 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[70%] bg-[#8B2635]/15 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6 md:gap-8 relative z-10">
         <motion.div variants={itemVariants} className="max-w-3xl">
           <Badge className="mb-4 sm:mb-5">Services & Capabilities</Badge>
-          <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h2 md:text-h2 text-primary tracking-tight leading-[1.15] mb-3 md:mb-4 text-balance font-bold">
+          <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h2 md:text-h2 text-[#F3ECE2] tracking-tight leading-[1.15] mb-3 md:mb-4 text-balance font-bold">
             Technology built around your business.
           </h2>
-          <p className="font-body-lg text-base sm:text-lg md:text-xl text-secondary max-w-2xl leading-relaxed">
+          <p className="font-body-lg text-base sm:text-lg md:text-xl text-[#9E9387] max-w-2xl leading-relaxed">
             From intelligent automation to custom software, we create technology that solves real business problems.
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export default function ServicesSection() {
         <motion.div variants={itemVariants} className="shrink-0">
           <button
             onClick={scrollToContact}
-            className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-neutral-900 text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-black transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer"
+            className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-300 shadow-lg shadow-[#8B2635]/20 cursor-pointer"
           >
             <span>Request a Custom Build</span>
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-300">

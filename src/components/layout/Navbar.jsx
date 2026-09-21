@@ -65,17 +65,22 @@ export default function Navbar() {
     <header className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 md:px-8 pointer-events-none">
       <div className={`pointer-events-auto w-full max-w-5xl flex justify-between items-center h-16 md:h-[72px] px-6 md:px-8 rounded-full border transition-all duration-500 ${
         isScrolled 
-          ? "bg-white/80 backdrop-blur-2xl border-outline-variant/30 shadow-[0_8px_30px_rgba(0,0,0,0.08)]" 
-          : "bg-white/40 backdrop-blur-lg border-white/50 shadow-sm"
+          ? "bg-[#14090C]/85 backdrop-blur-2xl border-[#2A1016] shadow-[0_8px_30px_rgba(0,0,0,0.5)]" 
+          : "bg-[#14090C]/50 backdrop-blur-xl border-[#2A1016]/70 shadow-sm"
       }`}>
         {/* Brand Logo - scrolls to top */}
         <button 
           onClick={(e) => scrollToSection(e, "#hero")} 
-          className="flex items-center gap-2.5 font-h1 text-xl md:text-2xl font-extrabold tracking-tighter text-primary hover:opacity-70 transition-opacity text-left cursor-pointer"
+          className="flex items-center gap-3 text-left cursor-pointer group"
         >
+          <div className=" w-13 h-10 rounded-lg overflow-hidden bg-black transition-colors shrink-0 shadow-sm flex items-center justify-center p-0.5 ">
+            <img 
+              src="/images/zetex.jpeg" 
+              alt="Zetex" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
           
-          
-          <span>ZETEX.</span>
         </button>
 
         {/* Desktop Navigation Links - Smooth Scroll, No Redirect */}
@@ -88,8 +93,8 @@ export default function Navbar() {
                 onClick={(e) => scrollToSection(e, link.href)}
                 className={`transition-all duration-300 px-5 py-2 rounded-full text-sm font-medium tracking-wide cursor-pointer ${
                   isActive
-                    ? "text-primary bg-white shadow-sm border border-outline-variant/20"
-                    : "text-secondary hover:text-primary hover:bg-white/50"
+                    ? "text-[#F3ECE2] bg-[#1E0D12] shadow-sm border border-[#38161E]"
+                    : "text-[#9E9387] hover:text-[#F3ECE2] hover:bg-[#1E0D12]/50"
                 }`}
               >
                 {link.name}
@@ -102,7 +107,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <button
             onClick={(e) => scrollToSection(e, "#contact")}
-            className="magnetic-button inline-flex items-center justify-center bg-primary text-on-primary px-7 py-2.5 rounded-full font-label-caps text-xs tracking-[0.1em] shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            className="magnetic-button inline-flex items-center justify-center bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-7 py-2.5 rounded-full font-label-caps text-xs tracking-[0.1em] shadow-lg shadow-[#8B2635]/20 transition-all duration-300 cursor-pointer"
           >
             LET'S TALK
           </button>
@@ -111,7 +116,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex items-center justify-center w-10 h-10 text-primary focus:outline-none bg-white/50 rounded-full border border-outline-variant/20 cursor-pointer"
+          className="md:hidden flex items-center justify-center w-10 h-10 text-[#F3ECE2] focus:outline-none bg-[#1A0B10] rounded-full border border-[#2A1016] cursor-pointer"
           aria-label="Toggle navigation menu"
         >
           <span className="material-symbols-outlined text-2xl leading-none">
@@ -122,7 +127,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu - Smooth Scroll, No Redirect */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-[calc(100%+16px)] left-4 right-4 pointer-events-auto bg-white rounded-2xl border border-outline-variant px-6 py-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="md:hidden absolute top-[calc(100%+16px)] left-4 right-4 pointer-events-auto bg-[#14090C] rounded-2xl border border-[#2A1016] px-6 py-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -130,8 +135,8 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className={`text-left text-lg py-2.5 border-b border-surface-variant transition-colors cursor-pointer ${
-                    isActive ? "font-bold text-primary pl-2" : "text-secondary hover:text-primary"
+                  className={`text-left text-lg py-2.5 border-b border-[#220E15] transition-colors cursor-pointer ${
+                    isActive ? "font-bold text-[#F3ECE2] pl-2 text-[#8B2635]" : "text-[#9E9387] hover:text-[#F3ECE2]"
                   }`}
                 >
                   {link.name}
@@ -141,7 +146,7 @@ export default function Navbar() {
             <div className="pt-3">
               <button
                 onClick={(e) => scrollToSection(e, "#contact")}
-                className="w-full text-center inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-DEFAULT font-body-md text-body-md cursor-pointer shadow-md"
+                className="w-full text-center inline-flex items-center justify-center bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-6 py-3.5 rounded-DEFAULT font-body-md text-body-md cursor-pointer shadow-md"
               >
                 Let's Talk →
               </button>

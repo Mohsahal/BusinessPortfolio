@@ -45,11 +45,11 @@ export default function InitialLoader({ onComplete }) {
           ease: [0.76, 0, 0.24, 1] 
         } 
       }}
-      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-white text-primary selection:bg-primary selection:text-white pointer-events-auto"
+      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#0D0507] text-[#F3ECE2] selection:bg-[#8B2635] selection:text-[#F3ECE2] pointer-events-auto"
     >
       {/* Subtle background ambient gradient */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-100/80 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8B2635]/15 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="relative flex flex-col items-center z-10 px-6 max-w-xs w-full">
@@ -58,12 +58,12 @@ export default function InitialLoader({ onComplete }) {
           initial={{ scale: 0.75, opacity: 0, y: 16 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="w-16 h-16 rounded-2xl bg-black overflow-hidden flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-black/5"
+          className="w-20 h-20 rounded-2xl bg-black overflow-hidden flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(0,0,0,0.8)] border border-[#38161E] p-1.5"
         >
           <img 
-            src="/images/Zetex.png" 
+            src="/images/zetex.jpeg" 
             alt="Zetex" 
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-contain" 
           />
         </motion.div>
 
@@ -74,11 +74,11 @@ export default function InitialLoader({ onComplete }) {
           transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-3"
         >
-          <h1 className="font-h1 text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] text-primary">
-            ZETEX<span className="text-neutral-400">.</span>
+          <h1 className="font-h1 text-3xl sm:text-4xl font-extrabold tracking-[0.16em] text-[#EDE6DD]">
+            ZETEX
           </h1>
-          <p className="font-mono text-[10px] sm:text-xs tracking-[0.28em] text-neutral-500 uppercase mt-1.5 font-medium">
-            Digital Solutions
+          <p className="font-mono text-[9px] sm:text-[10px] tracking-[0.24em] text-[#8B2635] uppercase mt-1.5 font-semibold">
+            AUTOMATE · BUILD · BEYOND
           </p>
         </motion.div>
 
@@ -89,15 +89,15 @@ export default function InitialLoader({ onComplete }) {
           transition={{ duration: 0.45, delay: 0.2 }}
           className="w-full max-w-[180px] mt-6 flex flex-col items-center gap-2"
         >
-          <div className="w-full h-[2px] bg-neutral-200 rounded-full overflow-hidden relative">
+          <div className="w-full h-[2px] bg-[#261016] rounded-full overflow-hidden relative">
             <motion.div
-              className="h-full bg-primary rounded-full transition-all duration-100 ease-out shadow-[0_0_8px_rgba(0,0,0,0.2)]"
+              className="h-full bg-[#8B2635] rounded-full transition-all duration-100 ease-out shadow-[0_0_10px_rgba(139,38,53,0.6)]"
               style={{ width: `${Math.min(progress, 100)}%` }}
             />
           </div>
-          <div className="flex justify-between w-full text-[10px] font-mono text-neutral-400 font-medium tracking-wider">
+          <div className="flex justify-between w-full text-[10px] font-mono text-[#9E9387] font-medium tracking-wider">
             <span>INITIALIZING</span>
-            <span>{Math.min(progress, 100)}%</span>
+            <span className="text-[#E8E1D4]">{Math.min(progress, 100)}%</span>
           </div>
         </motion.div>
       </div>
