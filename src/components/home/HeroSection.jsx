@@ -44,10 +44,10 @@ export default function HeroSection() {
       {/* ======================================================== */}
       {/* 2. THE MAJESTIC CENTERED EARTH / PLANET (EXACTLY LIKE LOGO) */}
       {/* ======================================================== */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[48%] -translate-y-1/2 w-[520px] sm:w-[720px] md:w-[920px] lg:w-[1080px] h-[520px] sm:h-[720px] md:h-[920px] lg:h-[1080px] pointer-events-none -z-10 flex items-center justify-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[46%] -translate-y-1/2 w-[340px] sm:w-[640px] md:w-[880px] lg:w-[1080px] h-[340px] sm:h-[640px] md:h-[880px] lg:h-[1080px] pointer-events-none -z-10 flex items-center justify-center">
         
         {/* Intense Crimson Atmospheric Halo & Outer Cosmic Bloom */}
-        <div className="absolute inset-[-40px] rounded-full bg-gradient-to-b from-[#FF2B44]/25 via-[#8F2334]/15 to-transparent blur-[70px] sm:blur-[100px]" />
+        <div className="absolute inset-[-20px] sm:inset-[-40px] rounded-full bg-gradient-to-b from-[#FF2B44]/25 via-[#8F2334]/15 to-transparent blur-[50px] sm:blur-[100px]" />
 
         {/* Planet Sphere Body with Glowing Horizon Rim */}
         <div 
@@ -64,7 +64,7 @@ export default function HeroSection() {
           }}
         >
           {/* Top Atmospheric Rim Light Beam */}
-          <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-[90%] h-36 bg-gradient-to-b from-[#FF4D64]/50 via-[#8F2334]/20 to-transparent rounded-t-full blur-[10px]" />
+          <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-[90%] h-24 sm:h-36 bg-gradient-to-b from-[#FF4D64]/50 via-[#8F2334]/20 to-transparent rounded-t-full blur-[8px] sm:blur-[10px]" />
 
           {/* Futuristic Planetary Latitude Grid Coordinates */}
           <svg 
@@ -93,15 +93,14 @@ export default function HeroSection() {
         {/* Emblem & Official Brand Tag */}
         <motion.div 
           variants={itemVariants} 
-          className="flex flex-col items-center justify-center mb-7"
+          className="flex flex-col items-center justify-center mb-4 sm:mb-7"
         >
-        
         </motion.div>
         
         {/* Centered Main Headline */}
         <motion.h1 
           variants={itemVariants} 
-          className="font-hero-mobile text-4xl sm:text-5xl md:text-6xl lg:text-[74px] leading-[1.08] text-[#F3ECE2] mb-7 tracking-tight font-extrabold max-w-4xl text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
+          className="font-hero-mobile text-3xl sm:text-5xl md:text-6xl lg:text-[74px] leading-[1.12] sm:leading-[1.08] text-[#F3ECE2] mb-5 sm:mb-7 tracking-tight font-extrabold max-w-4xl text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] px-2"
         >
           We build digital experiences that move businesses forward.
         </motion.h1>
@@ -109,7 +108,7 @@ export default function HeroSection() {
         {/* Centered Subtitle */}
         <motion.p 
           variants={itemVariants} 
-          className="font-body-lg text-lg sm:text-xl md:text-2xl text-[#C4B9AC] max-w-2xl mx-auto mb-10 leading-relaxed text-balance"
+          className="font-body-lg text-base sm:text-xl md:text-2xl text-[#C4B9AC] max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-balance px-2"
         >
           Software, AI and digital solutions designed to turn ambitious ideas into powerful products.
         </motion.p>
@@ -117,19 +116,19 @@ export default function HeroSection() {
         {/* Centered Action Buttons */}
         <motion.div 
           variants={itemVariants} 
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-4"
         >
           <Button 
             href="#contact" 
             variant="primary" 
-            className="w-full sm:w-auto justify-center px-9 py-4 rounded-full shadow-[0_10px_30px_rgba(179,38,56,0.35)] hover:shadow-[0_15px_40px_rgba(255,77,100,0.45)] font-semibold border border-[#FF4D64]/40"
+            className="w-full sm:w-auto justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-[0_10px_30px_rgba(179,38,56,0.35)] hover:shadow-[0_15px_40px_rgba(255,77,100,0.45)] font-semibold border border-[#FF4D64]/40"
           >
             Start a Project →
           </Button>
           <Button 
             href="#work" 
             variant="outline" 
-            className="w-full sm:w-auto justify-center px-9 py-4 rounded-full bg-[#14090C]/80 hover:bg-[#1E0D12] backdrop-blur-md border-[#38161E] hover:border-[#8F2334] text-[#EDE6DD] font-semibold"
+            className="w-full sm:w-auto justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#14090C]/80 hover:bg-[#1E0D12] backdrop-blur-md border-[#38161E] hover:border-[#8F2334] text-[#EDE6DD] font-semibold"
           >
             Explore Our Work
           </Button>

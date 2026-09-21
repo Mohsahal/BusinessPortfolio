@@ -110,7 +110,7 @@ export default function WhyZetex() {
           <button 
             type="button"
             onClick={() => scrollTo("contact")}
-            className="inline-flex items-center justify-center bg-[#8B2635] text-[#F3ECE2] font-body-md text-body-md px-8 py-4 rounded-xl shadow-lg shadow-[#8B2635]/25 hover:bg-[#A32D3F] border border-[#B3394B]/40 active:scale-95 transition-all duration-300 font-semibold cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#8B2635] text-[#F3ECE2] font-body-md text-body-md px-8 py-4 rounded-xl shadow-lg shadow-[#8B2635]/25 hover:bg-[#A32D3F] border border-[#B3394B]/40 active:scale-95 transition-all duration-300 font-semibold cursor-pointer"
           >
             <span>Start the Conversation</span>
             <span className="material-symbols-outlined ml-2 text-base">arrow_forward</span>

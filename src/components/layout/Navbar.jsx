@@ -73,14 +73,13 @@ export default function Navbar() {
           onClick={(e) => scrollToSection(e, "#hero")} 
           className="flex items-center gap-3 text-left cursor-pointer group"
         >
-          <div className=" w-13 h-10 rounded-lg overflow-hidden bg-black transition-colors shrink-0 shadow-sm flex items-center justify-center p-0.5 ">
+          <div className="w-12 h-10 rounded-lg overflow-hidden bg-black transition-colors shrink-0 shadow-sm flex items-center justify-center p-0.5">
             <img 
               src="/images/zetex.jpeg" 
               alt="Zetex" 
               className="w-full h-full object-contain" 
             />
           </div>
-          
         </button>
 
         {/* Desktop Navigation Links - Smooth Scroll, No Redirect */}
