@@ -45,19 +45,15 @@ export default function Footer() {
           <div>
             <button
               onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center gap-3 font-h1 text-2xl font-bold text-[#F3ECE2] mb-3 inline-flex tracking-tighter text-left cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center mb-3 inline-flex text-left cursor-pointer hover:opacity-85 transition-opacity"
+              aria-label="Zetex Home"
             >
-              <div className="w-10 h-10 rounded-lg overflow-hidden bg-black border border-[#2A1016] shrink-0 p-0.5 flex items-center justify-center">
+              <div className="h-8 sm:h-10 flex items-center">
                 <img 
-                  src="/images/zetex.jpeg" 
+                  src="/images/zetex-transparent.png" 
                   alt="Zetex Logo" 
-                  className="w-full h-full object-contain"
+                  className="h-full w-auto max-w-[110px] sm:max-w-[140px] object-contain"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-sans font-extrabold text-xl tracking-[0.16em] text-[#EDE6DD] leading-none">
-                  ZETEX
-                </span>
               </div>
             </button>
             <p className="font-body-md text-sm text-[#9E9387] max-w-xs mb-5 leading-relaxed">

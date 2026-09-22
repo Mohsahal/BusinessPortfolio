@@ -62,22 +62,23 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 md:px-8 pointer-events-none">
-      <div className={`pointer-events-auto w-full max-w-5xl flex justify-between items-center h-16 md:h-[72px] px-6 md:px-8 rounded-full border transition-all duration-500 ${
+    <header className="fixed top-3 sm:top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4 md:px-8 pointer-events-none">
+      <div className={`pointer-events-auto w-full max-w-5xl flex justify-between items-center h-14 sm:h-16 md:h-[72px] px-3.5 sm:px-6 md:px-8 rounded-full border transition-all duration-500 ${
         isScrolled 
           ? "bg-[#14090C]/85 backdrop-blur-2xl border-[#2A1016] shadow-[0_8px_30px_rgba(0,0,0,0.5)]" 
-          : "bg-[#14090C]/50 backdrop-blur-xl border-[#2A1016]/70 shadow-sm"
+          : "bg-[#14090C]/65 backdrop-blur-xl border-[#2A1016]/70 shadow-sm"
       }`}>
         {/* Brand Logo - scrolls to top */}
         <button 
           onClick={(e) => scrollToSection(e, "#hero")} 
-          className="flex items-center gap-3 text-left cursor-pointer group"
+          className="flex items-center text-left cursor-pointer group py-1"
+          aria-label="Zetex Home"
         >
-          <div className="w-12 h-10 rounded-lg overflow-hidden bg-black transition-colors shrink-0 shadow-sm flex items-center justify-center p-0.5">
+          <div className="h-7 sm:h-9 md:h-11 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
             <img 
-              src="/images/zetex.jpeg" 
+              src="/images/zetex-transparent.png" 
               alt="Zetex" 
-              className="w-full h-full object-contain" 
+              className="h-full w-auto max-w-[85px] sm:max-w-[120px] md:max-w-[150px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" 
             />
           </div>
         </button>
@@ -115,10 +116,10 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex items-center justify-center w-10 h-10 text-[#F3ECE2] focus:outline-none bg-[#1A0B10] rounded-full border border-[#2A1016] cursor-pointer"
+          className="md:hidden flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-[#F3ECE2] focus:outline-none bg-[#1A0B10] rounded-full border border-[#2A1016] cursor-pointer"
           aria-label="Toggle navigation menu"
         >
-          <span className="material-symbols-outlined text-2xl leading-none">
+          <span className="material-symbols-outlined text-xl sm:text-2xl leading-none">
             {mobileMenuOpen ? "close" : "menu"}
           </span>
         </button>

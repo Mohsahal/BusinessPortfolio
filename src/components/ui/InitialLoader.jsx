@@ -58,10 +58,10 @@ export default function InitialLoader({ onComplete }) {
           initial={{ scale: 0.75, opacity: 0, y: 16 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="w-20 h-20 rounded-2xl bg-black overflow-hidden flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(0,0,0,0.8)] border border-[#38161E] p-1.5"
+          className="w-20 h-20 rounded-2xl bg-[#14090C]/80 backdrop-blur-xl overflow-hidden flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(0,0,0,0.8)] border border-[#38161E] p-2"
         >
           <img 
-            src="/images/zetex.jpeg" 
+            src="/images/zetex-transparent.png" 
             alt="Zetex" 
             className="w-full h-full object-contain" 
           />
