@@ -20,7 +20,7 @@ export const footerLinks = {
     { name: "Privacy Policy", href: "/privacy" },
   ],
   social: [
-    { name: "LinkedIn", href: "https://linkedin.com/company/zetex", external: true },
-    { name: "Instagram", href: "https://www.instagram.com/zetex.studio/", external: true },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/zetex-digital-solutions/posts/?viewAsMember=true", external: true },
+    { name: "Instagram", href: "https://www.instagram.com/zetex.co?stkn=MXExN3IxNWlzMG9sbw%3D%3D", external: true },
   ]
 };

@@ -77,6 +77,46 @@ export default function ContactSection() {
                 </a>
               </div>
             </div>
+
+            {/* Instagram Channel */}
+            <div className="flex items-start gap-4">
+              <span className="material-symbols-outlined text-[#B3394B] text-[22px] mt-0.5 shrink-0">
+                photo_camera
+              </span>
+              <div>
+                <div className="text-[11px] font-mono tracking-widest text-[#8A7E72] uppercase mb-1">
+                  INSTAGRAM
+                </div>
+                <a
+                  href="https://www.instagram.com/zetex.co?stkn=MXExN3IxNWlzMG9sbw%3D%3D"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[15px] sm:text-base font-medium text-[#F3ECE2] hover:text-[#B3394B] transition-colors"
+                >
+                  @zetex.co
+                </a>
+              </div>
+            </div>
+
+            {/* LinkedIn Channel */}
+            <div className="flex items-start gap-4">
+              <span className="material-symbols-outlined text-[#B3394B] text-[22px] mt-0.5 shrink-0">
+                share
+              </span>
+              <div>
+                <div className="text-[11px] font-mono tracking-widest text-[#8A7E72] uppercase mb-1">
+                  LINKEDIN
+                </div>
+                <a
+                  href="https://www.linkedin.com/company/zetex-digital-solutions/posts/?viewAsMember=true"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[15px] sm:text-base font-medium text-[#F3ECE2] hover:text-[#B3394B] transition-colors"
+                >
+                  Zetex Digital Solutions
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Confidentiality Note */}
@@ -95,7 +135,7 @@ export default function ContactSection() {
           <ContactForm />
           
           {/* Studio Location Map Box */}
-          <div className="mt-8 sm:mt-10 border border-[#261016] bg-[#14090C] overflow-hidden">
+          <div className="mt-8 sm:mt-10 border border-[#38161E] bg-[#14090C] overflow-hidden">
             <div className="p-4 sm:p-5 flex items-start gap-3 bg-[#14090C]">
               <span className="material-symbols-outlined text-[#B3394B] text-[20px] mt-0.5 shrink-0">
                 location_on
@@ -110,7 +150,7 @@ export default function ContactSection() {
               </div>
             </div>
             
-            <div className="h-[180px] sm:h-[220px] w-full relative pointer-events-none overflow-hidden border-t border-[#261016]">
+            <div className="h-[180px] sm:h-[220px] w-full relative pointer-events-none overflow-hidden border-t border-[#38161E]">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125745.74838634898!2d76.21443494541908!3d9.982342797672288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                 className="absolute w-full h-[360px] -top-[70px] left-0"

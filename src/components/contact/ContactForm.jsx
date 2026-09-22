@@ -24,7 +24,11 @@ export default function ContactForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "phone") {
-      const numericValue = value.replace(/\D/g, "").slice(0, 10);
+      let numericValue = value.replace(/\D/g, "");
+      if (numericValue.startsWith("91") && numericValue.length > 10) {
+        numericValue = numericValue.slice(2);
+      }
+      numericValue = numericValue.slice(0, 10);
       setFormData((prev) => ({ ...prev, [name]: numericValue }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
@@ -36,12 +40,17 @@ export default function ContactForm() {
     setStatus("submitting");
     
     try {
+      const payload = {
+        ...formData,
+        phone: formData.phone ? `+91 ${formData.phone}` : ""
+      };
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -72,13 +81,13 @@ export default function ContactForm() {
     setStatus("idle");
   };
 
-  const inputStyles = "w-full bg-[#160A0E] text-[#F3ECE2] rounded-none px-4 py-3.5 text-sm border border-[#2A1016] focus:border-[#8B2635] focus:outline-none focus:bg-[#1A0B10] transition-colors placeholder:text-[#6B5E55]";
-  const labelStyles = "text-[11px] font-mono font-medium tracking-wider text-[#A89D91] uppercase block mb-2";
+  const inputStyles = "w-full bg-[#160A0E] text-[#F3ECE2] rounded-none px-4 py-3.5 text-sm border border-[#4A242E] hover:border-[#732F3F] focus:border-[#B3394B] focus:ring-1 focus:ring-[#B3394B]/50 focus:outline-none focus:bg-[#1C0C12] transition-all duration-200 placeholder:text-[#8A7C72]";
+  const labelStyles = "text-[11px] font-mono font-semibold tracking-wider text-[#B8ACA0] uppercase block mb-2";
 
   return (
     <div className="relative w-full">
       {status === "success" ? (
-        <div className="text-center py-16 px-6 bg-[#14090C] border border-[#261016] space-y-6">
+        <div className="text-center py-16 px-6 bg-[#14090C] border border-[#4A242E] space-y-6">
           <div className="w-16 h-16 bg-[#1E0D12] border border-[#38161E] rounded-full flex items-center justify-center mx-auto text-[#B3394B]">
             <span className="material-symbols-outlined text-3xl">check</span>
           </div>
@@ -140,14 +149,19 @@ export default function ContactForm() {
             </div>
             <div>
               <label className={labelStyles}>Phone / WhatsApp</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+1 (555) 000-0000"
-                className={inputStyles}
-              />  
+              <div className="flex items-stretch w-full group">
+                <span className="inline-flex items-center justify-center px-3.5 bg-[#1F0E14] text-[#EDE6DD] border border-r-0 border-[#4A242E] group-hover:border-[#732F3F] text-xs sm:text-sm font-mono font-bold select-none shrink-0 tracking-wider transition-colors">
+                  +91
+                </span>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="98765 43210"
+                  className={`${inputStyles} rounded-none border-l-0 flex-1`}
+                />  
+              </div>
             </div>
           </div>
 
@@ -176,8 +190,8 @@ export default function ContactForm() {
                     className="fixed inset-0 z-40" 
                     onClick={() => setIsDropdownOpen(false)}
                   ></div>
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#160A0E] border border-[#2A1016] shadow-2xl z-50">
-                    <ul className="py-1">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#160A0E] border border-[#4A242E] shadow-2xl z-50">
+                    <ul className="py-1 divide-y divide-[#2A1016]">
                       {servicesList.map((svc) => (
                         <li key={svc.value}>
                           <button
