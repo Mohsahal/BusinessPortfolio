@@ -135,7 +135,7 @@ export const projects = [
       "Kinetic typography and dynamic viewport scaling",
       "Zero-dependency responsive layout design"
     ],
-    liveDemoUrl: "https://personal-portfolio-8p6j.onrender.com/"
+    liveDemoUrl: "https://personal-portfolio-8p6j.onrender.com"
   },
   {
     id: "wander-travel-platform",

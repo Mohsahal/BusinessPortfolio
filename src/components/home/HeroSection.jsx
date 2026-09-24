@@ -27,62 +27,39 @@ export default function HeroSection() {
     <section id="hero" className="relative min-h-[92vh] lg:min-h-[96vh] flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto pt-32 sm:pt-40 md:pt-48 pb-24 sm:pb-32 overflow-hidden select-none">
       
       {/* ======================================================== */}
-      {/* 1. DEEP SPACE BACKGROUND & SUBTLE COSMIC PARTICLES       */}
+      {/* 1. ARCHITECTURAL BONE CANVAS WITH POSTER BURGUNDY PLINTH */}
       {/* ======================================================== */}
       <div className="absolute inset-0 pointer-events-none -z-20 overflow-hidden">
-        {/* Subtle Ambient Radial Lighting */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-5xl h-[60%] bg-gradient-to-b from-[#8B2635]/25 via-[#5E1722]/10 to-transparent rounded-full blur-[140px]" />
-        
-        {/* Cosmic Star Dust */}
-        <div className="absolute top-12 left-1/4 w-1 h-1 bg-[#F3ECE2] rounded-full opacity-60 animate-pulse" />
-        <div className="absolute top-28 right-1/3 w-1.5 h-1.5 bg-[#F3ECE2] rounded-full opacity-40" />
-        <div className="absolute top-44 left-1/6 w-1 h-1 bg-[#B3394B] rounded-full opacity-70" />
-        <div className="absolute top-20 right-1/5 w-1 h-1 bg-[#F3ECE2] rounded-full opacity-50 animate-ping duration-1000" />
-        <div className="absolute top-64 right-1/4 w-1.5 h-1.5 bg-[#F3ECE2] rounded-full opacity-35" />
-      </div>
-
-      {/* ======================================================== */}
-      {/* 2. THE MAJESTIC CENTERED EARTH / PLANET (EXACTLY LIKE LOGO) */}
-      {/* ======================================================== */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[46%] -translate-y-1/2 w-[340px] sm:w-[640px] md:w-[880px] lg:w-[1080px] h-[340px] sm:h-[640px] md:h-[880px] lg:h-[1080px] pointer-events-none -z-10 flex items-center justify-center">
-        
-        {/* Intense Crimson Atmospheric Halo & Outer Cosmic Bloom */}
-        <div className="absolute inset-[-20px] sm:inset-[-40px] rounded-full bg-gradient-to-b from-[#FF2B44]/25 via-[#8F2334]/15 to-transparent blur-[50px] sm:blur-[100px]" />
-
-        {/* Planet Sphere Body with Glowing Horizon Rim */}
+        {/* Soft Diagonal Window Beam (Architectural daylight from upper left) */}
         <div 
-          className="relative w-full h-full rounded-full border-t-2 border-[#FF3B55] border-x border-[#8F2334]/40 border-b border-transparent overflow-hidden"
+          className="absolute -top-24 -left-20 w-[70vw] h-[80vh] opacity-60 blur-3xl"
           style={{
-            background: "radial-gradient(circle at 50% 12%, #22070E 0%, #120306 40%, #050102 75%, #000000 100%)",
-            boxShadow: `
-              0 -10px 40px rgba(255, 59, 85, 0.6),
-              0 -30px 90px rgba(179, 38, 56, 0.4),
-              0 0 160px rgba(143, 35, 52, 0.25),
-              inset 0 16px 60px rgba(255, 77, 100, 0.4),
-              inset 0 40px 140px rgba(143, 35, 52, 0.3)
-            `
+            background: "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 241, 234, 0.2) 60%, transparent 100%)"
+          }}
+        />
+
+        {/* The Exact Architectural Burgundy Wedge / Monolith from the ZETEX Poster */}
+        <div 
+          className="absolute -bottom-16 -left-16 sm:-bottom-24 sm:-left-20 w-[320px] sm:w-[500px] md:w-[650px] h-[220px] sm:h-[320px] md:h-[400px] rounded-tr-[100px] sm:rounded-tr-[160px] border-t-2 border-[#8A253A]/80 -rotate-3 opacity-95 shadow-[0_25px_60px_rgba(53,10,19,0.3)]"
+          style={{
+            background: "linear-gradient(145deg, #631B27 0%, #430E18 60%, #2A060E 100%)"
           }}
         >
-          {/* Top Atmospheric Rim Light Beam */}
-          <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-[90%] h-24 sm:h-36 bg-gradient-to-b from-[#FF4D64]/50 via-[#8F2334]/20 to-transparent rounded-t-full blur-[8px] sm:blur-[10px]" />
-
-          {/* Futuristic Planetary Latitude Grid Coordinates */}
-          <svg 
-            className="absolute inset-0 w-full h-full opacity-35" 
-            viewBox="0 0 800 800" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <ellipse cx="400" cy="400" rx="390" ry="110" stroke="#FF4D64" strokeWidth="0.8" strokeDasharray="6 6" />
-            <ellipse cx="400" cy="400" rx="370" ry="220" stroke="#FF4D64" strokeWidth="0.6" strokeDasharray="4 8" />
-            <ellipse cx="400" cy="400" rx="340" ry="330" stroke="#8F2334" strokeWidth="0.5" />
-            <path d="M400 5 L400 795" stroke="#8F2334" strokeWidth="0.5" strokeDasharray="4 4" />
-          </svg>
+          {/* Subtle light sheen on top edge of plinth like in the poster */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#FF4D6A]/70 to-transparent" />
         </div>
+
+        {/* Ambient Warm Burgundy Bloom in bottom right */}
+        <div 
+          className="absolute -bottom-24 right-0 w-[450px] h-[350px] rounded-full blur-[140px] opacity-25"
+          style={{
+            background: "radial-gradient(circle, #631B27 0%, transparent 70%)"
+          }}
+        />
       </div>
 
       {/* ======================================================== */}
-      {/* 3. HERO CONTENT FLOATING OVER THE PLANETARY HORIZON      */}
+      {/* 2. HERO CONTENT WITH BALANCED BONE + BURGUNDY THEME      */}
       {/* ======================================================== */}
       <motion.div 
         className="w-full max-w-4xl flex flex-col items-center justify-center text-center z-10 mx-auto"
@@ -90,30 +67,31 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        {/* Emblem & Official Brand Tag */}
-        <motion.div 
-          variants={itemVariants} 
-          className="flex flex-col items-center justify-center mb-4 sm:mb-7"
-        >
+        {/* Top Architectural Pill Badge */}
+        <motion.div variants={itemVariants} className="mb-5 sm:mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE6DC] border border-[#631B27]/30 text-[#631B27] font-mono text-[11px] uppercase tracking-widest font-bold shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#631B27] animate-pulse" />
+            Digital Engineering & AI Solutions
+          </span>
         </motion.div>
-        
-        {/* Centered Main Headline */}
+
+        {/* Centered Main Headline with Burgundy Touch */}
         <motion.h1 
           variants={itemVariants} 
-          className="font-hero-mobile text-3xl sm:text-5xl md:text-6xl lg:text-[74px] leading-[1.12] sm:leading-[1.08] text-[#F3ECE2] mb-5 sm:mb-7 tracking-tight font-extrabold max-w-4xl text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] px-2"
+          className="font-hero-mobile text-3xl sm:text-5xl md:text-6xl lg:text-[74px] leading-[1.12] sm:leading-[1.08] text-[#141414] mb-5 sm:mb-7 tracking-tight font-extrabold max-w-4xl text-balance px-2"
         >
-          We build digital experiences that move businesses forward.
+          We build <span className="text-[#631B27]">digital experiences</span> that move businesses forward.
         </motion.h1>
         
         {/* Centered Subtitle */}
         <motion.p 
           variants={itemVariants} 
-          className="font-body-lg text-base sm:text-xl md:text-2xl text-[#C4B9AC] max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-balance px-2"
+          className="font-body-lg text-base sm:text-xl md:text-2xl text-[#6A6258] max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-balance px-2 font-normal"
         >
           Software, AI and digital solutions designed to turn ambitious ideas into powerful products.
         </motion.p>
         
-        {/* Centered Action Buttons */}
+        {/* Centered Action Buttons with Burgundy Duality */}
         <motion.div 
           variants={itemVariants} 
           className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-4"
@@ -121,14 +99,14 @@ export default function HeroSection() {
           <Button 
             href="#contact" 
             variant="primary" 
-            className="w-full sm:w-auto justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-[0_10px_30px_rgba(179,38,56,0.35)] hover:shadow-[0_15px_40px_rgba(255,77,100,0.45)] font-semibold border border-[#FF4D64]/40"
+            className="w-full sm:w-auto justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-[0_10px_30px_rgba(99,27,39,0.3)] hover:shadow-[0_15px_40px_rgba(99,27,39,0.45)] font-semibold border border-[#7E2535]"
           >
             Start a Project →
           </Button>
           <Button 
             href="#work" 
-            variant="outline" 
-            className="w-full sm:w-auto justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#14090C]/80 hover:bg-[#1E0D12] backdrop-blur-md border-[#38161E] hover:border-[#8F2334] text-[#EDE6DD] font-semibold"
+            variant="burgundyOutline" 
+            className="w-full sm:w-auto justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full"
           >
             Explore Our Work
           </Button>

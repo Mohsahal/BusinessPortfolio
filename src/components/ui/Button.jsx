@@ -13,12 +13,15 @@ export default function Button({
   arrow = false,
   ...props
 }) {
-  const baseStyles = "inline-flex items-center justify-center font-body-md text-body-md rounded-DEFAULT transition-colors duration-300 text-center";
+  const hasCustomRadius = className.includes("rounded-");
+  const baseStyles = `inline-flex items-center justify-center font-body-md text-body-md ${hasCustomRadius ? "" : "rounded-DEFAULT"} transition-all duration-300 text-center`;
   
   const variants = {
-    primary: "bg-[#8B2635] text-[#F3ECE2] px-8 py-4 hover:bg-[#A32D3F] shadow-lg shadow-[#8B2635]/20 font-semibold",
-    secondary: "bg-[#1A0B10] text-[#F3ECE2] border border-[#2E1219] px-8 py-4 hover:bg-[#250F16]",
-    outline: "border border-[#38161E] text-[#E8E1D4] px-8 py-4 hover:bg-[#1A0B10] hover:text-[#F3ECE2] hover:border-[#8B2635]/50 font-semibold"
+    primary: "bg-[#631B27] text-[#F5F1EA] hover:bg-[#782231] shadow-lg shadow-[#631B27]/25 font-semibold border border-[#7E2535]",
+    secondary: "bg-[#EDE6DC] text-[#141414] border border-[#DFD7CA] hover:bg-[#DFD7CA] hover:border-[#C8BCA8] font-semibold",
+    outline: "bg-transparent border border-[#DFD7CA] text-[#141414] hover:bg-[#EDE6DC] hover:text-[#141414] font-semibold",
+    burgundyOutline: "bg-[#EDE6DC] text-[#631B27] border-2 border-[#631B27] hover:bg-[#631B27] hover:text-[#F5F1EA] hover:border-[#631B27] shadow-xs hover:shadow-lg hover:shadow-[#631B27]/25 font-bold",
+    custom: ""
   };
 
   const content = (
@@ -67,9 +70,9 @@ export default function Button({
   return (
     <motion.div
       className={wrapperClass}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
     >
       {Element}
     </motion.div>

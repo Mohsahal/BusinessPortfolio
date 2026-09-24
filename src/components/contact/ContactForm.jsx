@@ -81,25 +81,25 @@ export default function ContactForm() {
     setStatus("idle");
   };
 
-  const inputStyles = "w-full bg-[#160A0E] text-[#F3ECE2] rounded-none px-4 py-3.5 text-sm border border-[#4A242E] hover:border-[#732F3F] focus:border-[#B3394B] focus:ring-1 focus:ring-[#B3394B]/50 focus:outline-none focus:bg-[#1C0C12] transition-all duration-200 placeholder:text-[#8A7C72]";
-  const labelStyles = "text-[11px] font-mono font-semibold tracking-wider text-[#B8ACA0] uppercase block mb-2";
+  const inputStyles = "w-full bg-[#EDE6DC] text-[#141414] rounded-none px-4 py-3.5 text-sm border border-[#DFD7CA] hover:border-[#631B27] focus:border-[#631B27] focus:ring-1 focus:ring-[#631B27]/30 focus:outline-none focus:bg-[#E5DDD0] transition-all duration-200 placeholder:text-[#8C8276]";
+  const labelStyles = "text-[11px] font-mono font-semibold tracking-wider text-[#6A6258] uppercase block mb-2";
 
   return (
     <div className="relative w-full">
       {status === "success" ? (
-        <div className="text-center py-16 px-6 bg-[#14090C] border border-[#4A242E] space-y-6">
-          <div className="w-16 h-16 bg-[#1E0D12] border border-[#38161E] rounded-full flex items-center justify-center mx-auto text-[#B3394B]">
+        <div className="text-center py-16 px-6 bg-[#EDE6DC] border border-[#DFD7CA] space-y-6">
+          <div className="w-16 h-16 bg-[#EDE6DC] border border-[#DFD7CA] rounded-full flex items-center justify-center mx-auto text-[#631B27]">
             <span className="material-symbols-outlined text-3xl">check</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#F3ECE2] tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#141414] tracking-tight">
             Inquiry Received
           </h3>
-          <p className="text-sm sm:text-base text-[#9E9387] max-w-md mx-auto leading-relaxed">
-            Thank you, <span className="font-semibold text-[#F3ECE2]">{formData.name}</span>. Our technical architects will review your project requirements and respond within 24 hours.
+          <p className="text-sm sm:text-base text-[#6A6258] max-w-md mx-auto leading-relaxed">
+            Thank you, <span className="font-semibold text-[#141414]">{formData.name}</span>. Our technical architects will review your project requirements and respond within 24 hours.
           </p>
           <button
             onClick={resetForm}
-            className="bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-6 py-3 text-sm font-medium rounded-none border border-[#B3394B]/40 transition-colors inline-block cursor-pointer"
+            className="bg-[#631B27] hover:bg-[#782231] text-[#F5F1EA] px-6 py-3 text-sm font-medium rounded-none border border-[#782231] transition-colors inline-block cursor-pointer shadow-sm"
           >
             Submit Another Project
           </button>
@@ -150,7 +150,7 @@ export default function ContactForm() {
             <div>
               <label className={labelStyles}>Phone / WhatsApp</label>
               <div className="flex items-stretch w-full group">
-                <span className="inline-flex items-center justify-center px-3.5 bg-[#1F0E14] text-[#EDE6DD] border border-r-0 border-[#4A242E] group-hover:border-[#732F3F] text-xs sm:text-sm font-mono font-bold select-none shrink-0 tracking-wider transition-colors">
+                <span className="inline-flex items-center justify-center px-3.5 bg-[#EDE6DC] text-[#141414] border border-r-0 border-[#DFD7CA] group-hover:border-[#631B27]/40 text-xs sm:text-sm font-mono font-bold select-none shrink-0 tracking-wider transition-colors">
                   +91
                 </span>
                 <input
@@ -174,12 +174,12 @@ export default function ContactForm() {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`${inputStyles} flex items-center justify-between cursor-pointer w-full text-left`}
               >
-                <span className={formData.service ? "text-[#F3ECE2]" : "text-[#6B5E55]"}>
+                <span className={formData.service ? "text-[#141414]" : "text-[#8C8276]"}>
                   {formData.service 
                     ? servicesList.find(s => s.value === formData.service)?.label 
                     : "Select a service..."}
                 </span>
-                <span className={`material-symbols-outlined text-[#B3394B] text-xl transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}>
+                <span className={`material-symbols-outlined text-[#631B27] text-xl transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
               </button>
@@ -190,8 +190,8 @@ export default function ContactForm() {
                     className="fixed inset-0 z-40" 
                     onClick={() => setIsDropdownOpen(false)}
                   ></div>
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#160A0E] border border-[#4A242E] shadow-2xl z-50">
-                    <ul className="py-1 divide-y divide-[#2A1016]">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#EDE6DC] border border-[#DFD7CA] shadow-2xl z-50">
+                    <ul className="py-1 divide-y divide-[#EBE3D7]">
                       {servicesList.map((svc) => (
                         <li key={svc.value}>
                           <button
@@ -200,7 +200,7 @@ export default function ContactForm() {
                               handleChange({ target: { name: 'service', value: svc.value }});
                               setIsDropdownOpen(false);
                             }}
-                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#200D13] transition-colors text-[#F3ECE2] ${formData.service === svc.value ? 'bg-[#200D13] font-semibold text-[#B3394B]' : ''}`}
+                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#EDE6DC] transition-colors text-[#141414] ${formData.service === svc.value ? 'bg-[#EDE6DC] font-semibold text-[#631B27]' : ''}`}
                           >
                             {svc.label}
                           </button>
@@ -231,7 +231,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-7 py-3.5 text-sm font-semibold inline-flex items-center justify-center gap-2.5 rounded-none border border-[#B3394B]/40 shadow-lg shadow-[#8B2635]/20 transition-all cursor-pointer w-full sm:w-auto"
+              className="bg-[#631B27] hover:bg-[#782231] text-[#F5F1EA] px-7 py-3.5 text-sm font-semibold inline-flex items-center justify-center gap-2.5 rounded-none border border-[#782231] shadow-lg shadow-[#631B27]/20 transition-all cursor-pointer w-full sm:w-auto"
             >
               <span>{status === "submitting" ? "Sending..." : "Send Message"}</span>
               <span className="material-symbols-outlined text-[17px] -rotate-45 -mt-0.5">send</span>

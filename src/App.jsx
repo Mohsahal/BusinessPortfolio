@@ -25,7 +25,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <div className="min-h-screen flex flex-col bg-background text-on-background selection:bg-primary selection:text-on-primary w-full relative">
+      <div className="min-h-screen flex flex-col bg-[#F5F1EA] text-[#141414] selection:bg-[#631B27] selection:text-[#F5F1EA] w-full relative">
         <ScrollToTop />
         <Navbar />
         <WhatsAppFloat />

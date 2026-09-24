@@ -63,22 +63,22 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-3 sm:top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4 md:px-8 pointer-events-none">
-      <div className={`pointer-events-auto w-full max-w-5xl flex justify-between items-center h-14 sm:h-16 md:h-[72px] px-3.5 sm:px-6 md:px-8 rounded-full border transition-all duration-500 ${
+      <div className={`pointer-events-auto w-full max-w-5xl flex justify-between items-center h-14 sm:h-16 md:h-[68px] px-4 sm:px-6 md:px-8 rounded-full border transition-all duration-300 ${
         isScrolled 
-          ? "bg-[#1E1317]/80 backdrop-blur-2xl border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.5)]" 
-          : "bg-[#23171C]/55 backdrop-blur-xl border-white/10 shadow-sm"
+          ? "bg-[#EDE6DC]/95 backdrop-blur-2xl border-[#D8CEBF] shadow-[0_12px_36px_rgba(20,20,20,0.1)] hover:bg-[#E5DDD0]/98" 
+          : "bg-[#EDE6DC]/85 backdrop-blur-xl border-[#DFD7CA]/80 shadow-xs hover:bg-[#E5DDD0]/90"
       }`}>
         {/* Brand Logo - scrolls to top */}
         <button 
           onClick={(e) => scrollToSection(e, "#hero")} 
-          className="flex items-center text-left cursor-pointer group py-1"
+          className="flex items-center text-left cursor-pointer group py-1 shrink-0"
           aria-label="Zetex Home"
         >
-          <div className="h-7 sm:h-9 md:h-11 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+          <div className="h-8 sm:h-10 md:h-11 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
             <img 
-              src="/images/zetex-transparent.png" 
+              src="/images/zetex-dark.png" 
               alt="Zetex" 
-              className="h-full w-auto max-w-[85px] sm:max-w-[120px] md:max-w-[150px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" 
+              className="h-full w-auto max-h-8 sm:max-h-10 md:max-h-11 object-contain drop-shadow-xs" 
             />
           </div>
         </button>
@@ -91,10 +91,10 @@ export default function Navbar() {
               <button
                 key={link.name}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`transition-all duration-300 px-5 py-2 rounded-full text-sm font-medium tracking-wide cursor-pointer ${
+                className={`transition-all duration-200 px-4 py-2 rounded-full text-sm font-medium tracking-wide cursor-pointer ${
                   isActive
-                    ? "text-[#F3ECE2] bg-white/10 shadow-sm border border-white/15"
-                    : "text-[#B5AAA0] hover:text-[#F3ECE2] hover:bg-white/[0.06]"
+                    ? "text-[#141414] bg-[#DFD7CA] shadow-xs border border-[#D0C4B2] font-semibold"
+                    : "text-[#6A6258] hover:text-[#141414] hover:bg-[#DFD7CA]/60"
                 }`}
               >
                 {link.name}
@@ -107,7 +107,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <button
             onClick={(e) => scrollToSection(e, "#contact")}
-            className="magnetic-button inline-flex items-center justify-center bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-7 py-2.5 rounded-full font-label-caps text-xs tracking-[0.1em] shadow-lg shadow-[#8B2635]/20 transition-all duration-300 cursor-pointer"
+            className="magnetic-button inline-flex items-center justify-center bg-[#631B27] hover:bg-[#782231] text-[#F5F1EA] px-7 py-2.5 rounded-full font-label-caps text-xs tracking-[0.1em] shadow-lg shadow-[#631B27]/20 transition-all duration-300 cursor-pointer"
           >
             LET'S TALK
           </button>
@@ -116,7 +116,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-[#F3ECE2] focus:outline-none bg-white/[0.06] rounded-full border border-white/10 cursor-pointer"
+          className="md:hidden flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-[#141414] focus:outline-none bg-[#DFD7CA]/50 rounded-full border border-[#DFD7CA] cursor-pointer"
           aria-label="Toggle navigation menu"
         >
           <span className="material-symbols-outlined text-xl sm:text-2xl leading-none">
@@ -127,7 +127,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu - Smooth Scroll, No Redirect */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-[calc(100%+14px)] left-4 right-4 pointer-events-auto bg-[#1C1216]/95 backdrop-blur-2xl rounded-2xl border border-white/10 px-6 py-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="md:hidden absolute top-[calc(100%+14px)] left-4 right-4 pointer-events-auto bg-[#EDE6DC]/98 backdrop-blur-2xl rounded-2xl border border-[#DFD7CA] px-6 py-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -135,8 +135,8 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className={`text-left text-lg py-2.5 border-b border-white/[0.08] transition-colors cursor-pointer ${
-                    isActive ? "font-bold text-[#F3ECE2] pl-2 text-[#8B2635]" : "text-[#B5AAA0] hover:text-[#F3ECE2]"
+                  className={`text-left text-lg py-2.5 border-b border-[#DFD7CA]/60 transition-colors cursor-pointer ${
+                    isActive ? "font-bold text-[#631B27] pl-2" : "text-[#6A6258] hover:text-[#141414]"
                   }`}
                 >
                   {link.name}
@@ -146,7 +146,7 @@ export default function Navbar() {
             <div className="pt-3">
               <button
                 onClick={(e) => scrollToSection(e, "#contact")}
-                className="w-full text-center inline-flex items-center justify-center bg-[#8B2635] hover:bg-[#A32D3F] text-[#F3ECE2] px-6 py-3.5 rounded-xl font-body-md text-body-md cursor-pointer shadow-md"
+                className="w-full text-center inline-flex items-center justify-center bg-[#631B27] hover:bg-[#782231] text-[#F5F1EA] px-6 py-3.5 rounded-xl font-body-md text-body-md cursor-pointer shadow-md"
               >
                 Let's Talk →
               </button>

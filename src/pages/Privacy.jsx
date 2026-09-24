@@ -10,43 +10,43 @@ export default function Privacy() {
         description="Privacy policy and data protection standards for Zetex Digital Solutions." 
       />
 
-      <div className="mb-12 pt-8 md:pt-12 border-b border-[#261016] pb-8">
+      <div className="mb-12 pt-8 md:pt-12 border-b border-[#DFD7CA] pb-8">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-[#9E9387] hover:text-[#F3ECE2] font-body-md text-sm mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-[#6A6258] hover:text-[#141414] font-body-md text-sm mb-6 transition-colors"
         >
           <span className="material-symbols-outlined text-sm">arrow_back</span>
           Back to Home
         </Link>
-        <span className="font-mono text-xs uppercase tracking-widest text-[#B3394B] font-semibold block mb-2">Data Protection</span>
-        <h1 className="font-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-[#F3ECE2] tracking-tight mb-4">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#631B27] font-semibold block mb-2">Data Protection</span>
+        <h1 className="font-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-[#141414] tracking-tight mb-4">
           Privacy Policy
         </h1>
-        <p className="text-[#9E9387] font-body-md text-sm">
+        <p className="text-[#6A6258] font-body-md text-sm">
           Last updated: January 2026 • Zetex Digital Solutions
         </p>
       </div>
 
-      <div className="space-y-10 font-body-md text-[#9E9387] leading-relaxed text-base sm:text-lg">
+      <div className="space-y-10 font-body-md text-[#6A6258] leading-relaxed text-base sm:text-lg">
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">1. Introduction</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">1. Introduction</h2>
           <p>
             At Zetex Digital Solutions ("Zetex", "we", "our", or "us"), we prioritize the privacy and security of individuals who visit our website, communicate with our studio, or engage us for software engineering and AI services. This policy describes how we collect, handle, and safeguard your data.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">2. Information We Collect</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">2. Information We Collect</h2>
           <p className="mb-3">We collect information that you voluntarily provide to us when contacting our team:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-[#F3ECE2]">Contact Details:</strong> Your name, business email address, phone number, and company name when filling our contact form or messaging us directly.</li>
-            <li><strong className="text-[#F3ECE2]">Project Requirements:</strong> Scope documents, technical specifications, and architectural goals shared during project scoping and consultation.</li>
-            <li><strong className="text-[#F3ECE2]">Usage & Technical Data:</strong> Standard aggregate analytics such as browser type, referring URLs, and interaction timestamps to help us optimize site performance.</li>
+            <li><strong className="text-[#141414]">Contact Details:</strong> Your name, business email address, phone number, and company name when filling our contact form or messaging us directly.</li>
+            <li><strong className="text-[#141414]">Project Requirements:</strong> Scope documents, technical specifications, and architectural goals shared during project scoping and consultation.</li>
+            <li><strong className="text-[#141414]">Usage & Technical Data:</strong> Standard aggregate analytics such as browser type, referring URLs, and interaction timestamps to help us optimize site performance.</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">3. How We Use Your Information</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">3. How We Use Your Information</h2>
           <p className="mb-3">We utilize the collected information strictly for legitimate operational purposes:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>Responding to technical inquiries and providing proposals, estimates, and architecture consultations.</li>
@@ -59,39 +59,39 @@ export default function Privacy() {
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">4. Data Security & Storage</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">4. Data Security & Storage</h2>
           <p>
             We implement industry-standard encryption, strict access control policies, and secure cloud infrastructure to protect client codebases, credentials, and sensitive technical data from unauthorized access, alteration, or disclosure.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">5. Third-Party Integrations & Cloud Services</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">5. Third-Party Integrations & Cloud Services</h2>
           <p>
             In building modern software architectures, we may interface with verified third-party cloud platforms (e.g. AWS, Render, Supabase, Google Cloud, OpenAI, Anthropic) under strict API security protocols and client-approved architectural designs.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">6. Your Rights & Data Retention</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">6. Your Rights & Data Retention</h2>
           <p>
             You have the right to request access to, correction of, or deletion of your personal contact data retained in our direct communication records. To submit a data inquiry or request deletion, reach out to us at{" "}
-            <a href="mailto:hello@zetex.studio" className="text-[#B3394B] hover:text-[#F3ECE2] font-medium underline transition-colors">
+            <a href="mailto:hello@zetex.studio" className="text-[#631B27] hover:text-[#782231] font-medium underline transition-colors">
               hello@zetex.studio
             </a>.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F3ECE2] mb-3">7. Contact Information</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#141414] mb-3">7. Contact Information</h2>
           <p>
             If you have questions regarding this Privacy Policy or our engineering data practices, contact us at:
           </p>
-          <div className="mt-3 p-4 bg-[#14090C] border border-[#261016] rounded-lg text-sm text-[#F3ECE2]">
+          <div className="mt-3 p-4 bg-[#FAF7F2] border border-[#DFD7CA] rounded-lg text-sm text-[#141414]">
             <div className="font-bold">Zetex Digital Solutions</div>
-            <div className="text-[#9E9387]">Email: <a href="mailto:hello@zetex.studio" className="text-[#B3394B] hover:underline">hello@zetex.studio</a></div>
-            <div className="text-[#9E9387]">Phone: <a href="tel:+918714196266" className="text-[#B3394B] hover:underline">+91 87141 96266</a></div>
-            <div className="text-[#9E9387]">Studio: Kochi, Kerala, India</div>
+            <div className="text-[#6A6258]">Email: <a href="mailto:hello@zetex.studio" className="text-[#631B27] hover:underline">hello@zetex.studio</a></div>
+            <div className="text-[#6A6258]">Phone: <a href="tel:+918714196266" className="text-[#631B27] hover:underline">+91 87141 96266</a></div>
+            <div className="text-[#6A6258]">Studio: Kochi, Kerala, India</div>
           </div>
         </section>
       </div>

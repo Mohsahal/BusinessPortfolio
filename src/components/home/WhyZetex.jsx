@@ -66,7 +66,7 @@ export default function WhyZetex() {
     >
       <motion.div variants={itemVariants} className="mb-10 md:mb-16">
         <Badge className="mb-4 sm:mb-6">Philosophy</Badge>
-        <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h2 md:text-h2 text-[#F3ECE2] border-b border-[#261016] pb-4 md:pb-6 tracking-tight font-bold">
+        <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h2 md:text-h2 text-[#141414] border-b border-[#DFD7CA] pb-4 md:pb-6 tracking-tight font-bold">
           Why Zetex?
         </h2>
       </motion.div>
@@ -77,14 +77,19 @@ export default function WhyZetex() {
             variants={itemVariants}
             key={pillar.title}
             className={`flex flex-col md:flex-row gap-4 md:gap-8 items-start pb-8 md:pb-12 ${
-              idx !== pillars.length - 1 ? "border-b border-[#261016]" : ""
+              idx !== pillars.length - 1 ? "border-b border-[#DFD7CA]" : ""
             }`}
           >
-            <div className="font-h1-mobile text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-[#F3ECE2] md:w-1/2 tracking-tight leading-tight">
-              {pillar.title}
+            <div className="md:w-1/2 flex items-start gap-4">
+              <span className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold text-[#631B27] shrink-0 pt-0.5">
+                0{idx + 1}
+              </span>
+              <div className="font-h1-mobile text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#141414] tracking-tight leading-tight">
+                {pillar.title}
+              </div>
             </div>
-            <div className="md:w-1/2 pt-1 md:pt-4">
-              <p className="font-body-lg text-sm sm:text-base md:text-lg text-[#9E9387] leading-relaxed">
+            <div className="md:w-1/2 pt-1 md:pt-2">
+              <p className="font-body-lg text-sm sm:text-base md:text-lg text-[#6A6258] leading-relaxed font-normal">
                 {pillar.description}
               </p>
             </div>
@@ -92,25 +97,25 @@ export default function WhyZetex() {
         ))}
       </div>
 
-      {/* Embedded CTA Block */}
+      {/* Embedded Architectural Burgundy Plinth CTA Block */}
       <motion.div 
         variants={itemVariants}
-        className="mt-16 md:mt-24 bg-[#14090C] border border-[#261016] rounded-2xl p-6 sm:p-10 md:p-16 text-center shadow-xl relative overflow-hidden group"
+        className="mt-16 md:mt-24 bg-gradient-to-br from-[#631B27] via-[#52141F] to-[#3D0D16] border border-[#782231]/60 rounded-2xl p-6 sm:p-10 md:p-16 text-center shadow-2xl relative overflow-hidden group text-[#F5F1EA]"
       >
         {/* Subtle Ambient Radial Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#8B2635]/15 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#9E2B43]/20 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="relative z-10">
-          <h3 className="font-h2-mobile md:font-h2 text-2xl md:text-4xl font-bold text-[#F3ECE2] mb-4 tracking-tight text-balance mx-auto">
+          <h3 className="font-h2-mobile md:font-h2 text-2xl md:text-4xl font-bold text-[#F5F1EA] mb-4 tracking-tight text-balance mx-auto">
             Ready to engineer your next milestone?
           </h3>
-          <p className="font-body-lg text-body-lg text-[#9E9387] max-w-2xl mx-auto mb-8 text-pretty">
+          <p className="font-body-lg text-body-lg text-[#DFD7CA] max-w-2xl mx-auto mb-8 text-pretty">
             Consult directly with our technical architects to scope your architecture, roadmap, and estimate.
           </p>
           <button 
             type="button"
             onClick={() => scrollTo("contact")}
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#8B2635] text-[#F3ECE2] font-body-md text-body-md px-8 py-4 rounded-xl shadow-lg shadow-[#8B2635]/25 hover:bg-[#A32D3F] border border-[#B3394B]/40 active:scale-95 transition-all duration-300 font-semibold cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#EDE6DC] text-[#631B27] hover:bg-[#DFD7CA] font-body-md text-body-md px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl active:scale-95 transition-all duration-300 font-bold cursor-pointer"
           >
             <span>Start the Conversation</span>
             <span className="material-symbols-outlined ml-2 text-base">arrow_forward</span>

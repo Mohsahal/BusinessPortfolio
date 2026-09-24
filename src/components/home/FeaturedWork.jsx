@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { projects } from "../../data/projects";
 import { Badge } from "../ui/SectionHeader";
 
@@ -10,19 +11,19 @@ export default function FeaturedWork() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
         <div className="max-w-3xl">
           <Badge className="mb-4">Portfolio</Badge>
-          <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h1 md:text-h1 text-[#F3ECE2] tracking-tight font-bold mb-3">
+          <h2 className="font-hero-mobile text-3xl sm:text-4xl md:font-h1 md:text-h1 text-[#141414] tracking-tight font-bold mb-3">
             Selected work
           </h2>
-          <p className="font-subheading text-[#9E9387] text-base sm:text-lg md:text-xl">
+          <p className="font-subheading text-[#6A6258] text-base sm:text-lg md:text-xl">
             Real products. Real systems. Real impact.
           </p>
         </div>
-        <div className="font-mono text-xs text-[#B3394B] font-semibold uppercase tracking-wider bg-[#1A0B10] px-3 py-1.5 rounded-full border border-[#38161E]">
+        <div className="font-mono text-xs text-[#F5F1EA] font-semibold uppercase tracking-wider bg-[#631B27] px-3.5 py-1.5 rounded-full border border-[#782231] shadow-xs">
           {projects.length} Production Deployments
         </div>
       </div>
 
-      {/* High-Impact Visual Card Grid matching Stitch Design */}
+      {/* High-Impact Visual Card Grid matching Architectural Bone Design */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-stretch">
         {projects.map((project, index) => {
           const isTopRow = project.colSpan === "md:col-span-6";
@@ -31,83 +32,78 @@ export default function FeaturedWork() {
             : "h-[190px] sm:h-[220px] md:h-[240px]";
 
           return (
-            <div 
+            <motion.div 
               key={project.id} 
-              className={`flex flex-col overflow-hidden group cursor-pointer border border-[#261016] bg-[#12070A] shadow-lg hover:shadow-2xl hover:shadow-[#8B2635]/20 hover:border-[#8B2635]/70 transition-all duration-500 rounded-none ${
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className={`flex flex-col overflow-hidden group cursor-pointer border border-[#DFD7CA] bg-[#EDE6DC] hover:bg-[#E5DDD0] shadow-sm hover:shadow-2xl hover:shadow-[#631B27]/20 hover:border-[#631B27] transition-colors duration-300 rounded-none ${
                 project.colSpan || "md:col-span-6"
               }`}
             >
               <Link to={`/work/${project.id}`} className="flex flex-col h-full text-left">
                 {/* 1. Top Image Stage */}
-                <div className={`relative w-full ${imageHeight} overflow-hidden bg-[#180A0E] shrink-0`}>
+                <div className={`relative w-full ${imageHeight} overflow-hidden bg-[#DFD7CA] shrink-0`}>
                   <img
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     src={project.image}
                     alt={project.alt || project.title}
                     loading={index < 2 ? "eager" : "lazy"}
-                    onError={(e) => {
-                      const src = e.currentTarget.src;
-                      if (src.includes('/images/projects/')) {
-                        e.currentTarget.src = src.replace('/images/projects/', '/images/');
-                      } else if (src.includes('/images/')) {
-                        e.currentTarget.src = src.replace('/images/', '/images/projects/');
-                      }
-                    }}
                   />
                   
-                  {/* Subtle Image Bottom Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12070A] via-transparent to-black/20 pointer-events-none" />
+                  {/* Subtle Image Bottom Vignette into Dark Bone */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#EDE6DC] via-transparent to-black/15 pointer-events-none" />
                   
-                  {/* Top Left Badge - Obsidian Wine & Bone */}
-                  <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 bg-[#14090C]/90 backdrop-blur-md px-3 py-1 border border-[#38161E] shadow-sm">
-                    <span className="font-mono text-[9px] md:text-[10px] font-bold text-[#EDE6DD] uppercase tracking-[0.16em]">
+                  {/* Top Left Badge - Rich Burgundy Accent */}
+                  <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 bg-[#631B27] px-3.5 py-1 border border-[#7D2232] shadow-md">
+                    <span className="font-mono text-[9px] md:text-[10px] font-bold text-[#F5F1EA] uppercase tracking-[0.16em]">
                       {project.category}
                     </span>
                   </div>
                   
-                  {/* Top Right Arrow Button */}
-                  <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-10 bg-[#1A0B10]/90 backdrop-blur-md w-8 h-8 md:w-9 md:h-9 flex items-center justify-center border border-[#38161E] text-[#EDE6DD] group-hover:bg-[#8B2635] group-hover:border-[#B3394B] group-hover:text-white transition-all duration-300 shadow-sm">
+                  {/* Top Right Arrow Button - Dark Bone with Burgundy hover */}
+                  <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-10 bg-[#EDE6DC] w-8 h-8 md:w-9 md:h-9 flex items-center justify-center border border-[#DFD7CA] text-[#631B27] group-hover:bg-[#631B27] group-hover:border-[#631B27] group-hover:text-[#F5F1EA] transition-all duration-300 shadow-xs">
                     <span className="material-symbols-outlined text-sm md:text-base group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
                       arrow_outward
                     </span>
                   </div>
                 </div>
 
-                {/* 2. Bottom Content Panel (Solid dark wine background for 100% crystal-clear text visibility) */}
-                <div className="p-5 sm:p-6 md:p-7 flex flex-col flex-1 justify-between bg-[#12070A] border-t border-[#261016]/80">
+                {/* 2. Bottom Content Panel in Dark Bone */}
+                <div className="p-5 sm:p-6 md:p-7 flex flex-col flex-1 justify-between bg-[#EDE6DC] group-hover:bg-[#E5DDD0] border-t border-[#DFD7CA] transition-colors duration-300">
                   <div>
                     {/* Technology Subtitle */}
                     {project.techSubtitle && (
-                      <div className="font-mono text-[10px] md:text-[11px] text-[#B3394B] font-semibold mb-2 tracking-wider uppercase">
+                      <div className="font-mono text-[10px] md:text-[11px] text-[#631B27] font-semibold mb-2 tracking-wider uppercase">
                         {project.techSubtitle}
                       </div>
                     )}
 
                     {/* Project Title */}
-                    <h3 className="font-sans text-xl sm:text-2xl md:text-[26px] text-[#F3ECE2] group-hover:text-white font-bold tracking-tight group-hover:translate-x-0.5 transition-transform duration-300 leading-tight mb-2.5">
+                    <h3 className="font-sans text-xl sm:text-2xl md:text-[26px] text-[#141414] group-hover:text-[#631B27] font-bold tracking-tight group-hover:translate-x-0.5 transition-transform duration-300 leading-tight mb-2.5">
                       {project.title}
                     </h3>
 
                     {/* Short Description */}
                     {project.shortDescription && (
-                      <p className="font-sans text-xs sm:text-sm text-[#A89D91] font-normal line-clamp-2 leading-relaxed mb-4">
+                      <p className="font-sans text-xs sm:text-sm text-[#5E564D] font-normal line-clamp-2 leading-relaxed mb-4">
                         {project.shortDescription}
                       </p>
                     )}
                   </div>
 
                   {/* Footer Meta Row: Metric on Left, Action Link on Right */}
-                  <div className="flex items-center justify-between pt-3 border-t border-[#261016] text-[11px] font-mono mt-auto">
-                    <span className="text-[#C4B9AC] font-medium">
+                  <div className="flex items-center justify-between pt-3 border-t border-[#DFD7CA] text-[11px] font-mono mt-auto">
+                    <span className="text-[#6A6258] font-medium">
                       {project.metricHighlight || (project.year ? `Year: ${project.year}` : "")}
                     </span>
-                    <span className="text-[#B3394B] group-hover:text-[#FF4D64] font-semibold tracking-wider uppercase inline-flex items-center gap-1 transition-colors">
+                    <span className="text-[#631B27] group-hover:text-[#782231] font-semibold tracking-wider uppercase inline-flex items-center gap-1 transition-colors">
                       {project.actionLabel || "VIEW CASE STUDY"} →
                     </span>
                   </div>
                 </div>
               </Link>
-            </div>
+            </motion.div>
           );
         })}
       </div>
